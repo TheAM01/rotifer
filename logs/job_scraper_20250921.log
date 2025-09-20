@@ -1,0 +1,596 @@
+2025-09-21 00:09:39,329 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:09:39,329 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:09:39,330 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:09:46,434 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:09:46,435 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:09:46,435 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:09:46,435 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:09:46,436 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:09:46,436 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:09:46,436 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:09:46,437 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:09:46,437 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:09:46,437 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:09:46,437 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:09:46,438 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:09:46,443 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:10:06,806 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:10:06,806 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:10:06,806 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:10:06,807 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:10:06,807 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:10:08,561 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:10:08,561 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:10:08,582 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:10:08,583 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:10:14,986 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:10:14,987 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:10:14,987 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:10:14,988 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:10:18,501 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:10:20,512 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:10:20,512 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:10:20,677 - tools.html_scraping_tool - INFO - Scraped page: 168198 characters
+2025-09-21 00:10:20,677 - magents.web_agent - INFO - Scraped page content: 168198 characters
+2025-09-21 00:10:20,678 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:10:20,678 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:10:20,973 - magents.analyzer_agent - INFO - Found careers link: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:10:20,973 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:10:20,974 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:10:20,974 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:10:24,550 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:10:26,561 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:10:26,561 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:10:26,698 - tools.html_scraping_tool - INFO - Scraped page: 162423 characters
+2025-09-21 00:10:26,698 - magents.web_agent - INFO - Scraped page content: 162423 characters
+2025-09-21 00:10:26,698 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:10:26,872 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:10:26,872 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:10:26,873 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:10:26,873 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:10:27,002 - tools.html_scraping_tool - INFO - Scraped page: 162423 characters
+2025-09-21 00:10:27,003 - magents.web_agent - INFO - Scraped page content: 162423 characters
+2025-09-21 00:10:27,003 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:10:27,003 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:10:27,398 - magents.analyzer_agent - INFO - Extracted 3 job links
+2025-09-21 00:10:27,398 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 3 job links
+2025-09-21 00:10:27,399 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 3 links
+2025-09-21 00:10:27,400 - magents.analyzer_agent - INFO - Best match: 'Enterprise Application Platforms' (score: 55.0)
+2025-09-21 00:10:27,400 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:10:27,400 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:10:30,327 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:10:32,348 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:10:32,348 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:10:32,348 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:10:32,496 - tools.html_scraping_tool - INFO - Scraped page: 183164 characters
+2025-09-21 00:10:32,496 - magents.web_agent - INFO - Scraped page content: 183164 characters
+2025-09-21 00:10:32,496 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:10:32,497 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:10:32,715 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:10:32,716 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:10:32,717 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:10:32,718 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:10:32,718 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:10:32,719 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:10:32,719 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:10:33,211 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:10:33,211 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:10:33,211 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:10:33,212 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:10:33,212 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:10:33,212 - magents.lead_agent - INFO - Lead Agent cleanup completed
+2025-09-21 00:14:24,851 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:14:24,852 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:14:24,852 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:14:26,231 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:14:26,232 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:14:26,232 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:14:26,233 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:14:26,233 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:14:26,233 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:14:26,234 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:14:26,234 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:14:26,235 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:14:26,235 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:14:26,235 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:14:26,236 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:14:26,236 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:14:31,142 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:14:31,182 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:14:31,184 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:14:31,194 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:14:31,195 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:14:32,658 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:14:32,659 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:14:32,659 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:14:32,660 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:14:38,600 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:14:38,602 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:14:38,602 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:14:38,603 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:14:42,123 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:14:44,145 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:14:44,145 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:14:44,320 - tools.html_scraping_tool - INFO - Scraped page: 168186 characters
+2025-09-21 00:14:44,321 - magents.web_agent - INFO - Scraped page content: 168186 characters
+2025-09-21 00:14:44,321 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:14:44,321 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:14:44,479 - tools.job_matching_tool - ERROR - Failed to write links to file: name 'json' is not defined
+2025-09-21 00:14:44,593 - magents.analyzer_agent - INFO - Found careers link: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:14:44,594 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:14:44,594 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:14:44,595 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:14:47,957 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:14:49,955 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:14:49,955 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:14:50,094 - tools.html_scraping_tool - INFO - Scraped page: 162367 characters
+2025-09-21 00:14:50,095 - magents.web_agent - INFO - Scraped page content: 162367 characters
+2025-09-21 00:14:50,095 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:14:50,284 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:14:50,285 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:14:50,285 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:14:50,286 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:14:50,422 - tools.html_scraping_tool - INFO - Scraped page: 162367 characters
+2025-09-21 00:14:50,422 - magents.web_agent - INFO - Scraped page content: 162367 characters
+2025-09-21 00:14:50,423 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:14:50,423 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:14:50,869 - magents.analyzer_agent - INFO - Extracted 3 job links
+2025-09-21 00:14:50,870 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 3 job links
+2025-09-21 00:14:50,870 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 3 links
+2025-09-21 00:14:50,871 - magents.analyzer_agent - INFO - Best match: 'Enterprise Application Platforms' (score: 55.0)
+2025-09-21 00:14:50,871 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:14:50,871 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:14:54,204 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:14:56,217 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:14:56,217 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:14:56,218 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:14:56,376 - tools.html_scraping_tool - INFO - Scraped page: 183108 characters
+2025-09-21 00:14:56,376 - magents.web_agent - INFO - Scraped page content: 183108 characters
+2025-09-21 00:14:56,377 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:14:56,377 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:14:56,595 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:14:56,595 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:14:56,596 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:14:56,597 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:14:56,598 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:14:56,598 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:14:56,598 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:14:57,994 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:14:57,994 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:14:57,995 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:14:57,995 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:14:57,996 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:14:57,997 - magents.lead_agent - INFO - Lead Agent cleanup completed
+2025-09-21 00:15:03,382 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:15:03,383 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:15:03,383 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:15:04,855 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:15:04,856 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:15:04,856 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:15:04,856 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:15:04,856 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:15:04,857 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:15:04,857 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:15:04,857 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:15:04,858 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:15:04,858 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:15:04,858 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:15:04,861 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:15:04,862 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:15:06,811 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:15:06,812 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:15:06,812 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:15:06,812 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:15:06,813 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:15:08,335 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:15:08,339 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:15:08,340 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:15:08,340 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:15:14,268 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:15:14,269 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:15:14,269 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:15:14,270 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:15:17,672 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:15:19,682 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:15:19,682 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:15:19,895 - tools.html_scraping_tool - INFO - Scraped page: 168201 characters
+2025-09-21 00:15:19,896 - magents.web_agent - INFO - Scraped page content: 168201 characters
+2025-09-21 00:15:19,896 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:15:19,896 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:15:20,046 - tools.job_matching_tool - INFO - Wrote 233 links to links.json
+2025-09-21 00:15:20,155 - magents.analyzer_agent - INFO - Found careers link: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:15:20,156 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:15:20,156 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:15:20,156 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:15:23,208 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/services/digital-workplace
+2025-09-21 00:15:25,213 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:15:25,213 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:15:25,359 - tools.html_scraping_tool - INFO - Scraped page: 162377 characters
+2025-09-21 00:15:25,360 - magents.web_agent - INFO - Scraped page content: 162377 characters
+2025-09-21 00:15:25,360 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:15:25,535 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:15:25,536 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:15:25,536 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:15:25,536 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:15:25,692 - tools.html_scraping_tool - INFO - Scraped page: 162377 characters
+2025-09-21 00:15:25,693 - magents.web_agent - INFO - Scraped page content: 162377 characters
+2025-09-21 00:15:25,693 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:15:25,693 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:15:26,108 - magents.analyzer_agent - INFO - Extracted 3 job links
+2025-09-21 00:15:26,109 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 3 job links
+2025-09-21 00:15:26,109 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 3 links
+2025-09-21 00:15:26,110 - magents.analyzer_agent - INFO - Best match: 'Enterprise Application Platforms' (score: 55.0)
+2025-09-21 00:15:26,110 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:15:26,111 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:15:29,141 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/services/enterprise-application-platforms
+2025-09-21 00:15:31,155 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:15:31,156 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:15:31,156 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:15:31,326 - tools.html_scraping_tool - INFO - Scraped page: 183118 characters
+2025-09-21 00:15:31,328 - magents.web_agent - INFO - Scraped page content: 183118 characters
+2025-09-21 00:15:31,328 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:15:31,329 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:15:31,565 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:15:31,567 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:15:31,568 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:15:31,568 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:15:31,570 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:15:31,570 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:15:31,570 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:15:31,914 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:15:31,914 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:15:31,914 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:15:31,916 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:15:31,916 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:15:31,917 - magents.lead_agent - INFO - Lead Agent cleanup completed
+2025-09-21 00:16:45,456 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:16:45,456 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:16:45,457 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:16:46,931 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:16:46,933 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:16:46,933 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:16:46,933 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:16:46,934 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:16:46,934 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:16:46,934 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:16:46,934 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:16:46,935 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:16:46,935 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:16:46,935 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:16:46,935 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:16:46,935 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:16:51,323 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:16:51,323 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:16:51,325 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:16:51,325 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:16:51,325 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:16:52,751 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:16:52,752 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:16:52,752 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:16:52,753 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:16:58,422 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:16:58,423 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:16:58,423 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:16:58,423 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:17:01,945 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:17:03,961 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:17:03,962 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:17:04,128 - tools.html_scraping_tool - INFO - Scraped page: 168195 characters
+2025-09-21 00:17:04,129 - magents.web_agent - INFO - Scraped page content: 168195 characters
+2025-09-21 00:17:04,129 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:17:04,129 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:17:04,271 - tools.job_matching_tool - INFO - Wrote 233 links to links.json
+2025-09-21 00:17:04,412 - magents.analyzer_agent - INFO - Found careers link: https://careers.services.global.ntt/global/en
+2025-09-21 00:17:04,413 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:17:04,413 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:17:04,413 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:17:12,064 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en
+2025-09-21 00:17:14,078 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:17:14,079 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:17:14,583 - tools.html_scraping_tool - INFO - Scraped page: 1008150 characters
+2025-09-21 00:17:14,584 - magents.web_agent - INFO - Scraped page content: 1008150 characters
+2025-09-21 00:17:14,584 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:17:14,861 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:17:14,862 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:17:14,862 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:17:14,862 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:17:15,240 - tools.html_scraping_tool - INFO - Scraped page: 1025152 characters
+2025-09-21 00:17:15,241 - magents.web_agent - INFO - Scraped page content: 1025152 characters
+2025-09-21 00:17:15,241 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:17:15,242 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:17:15,909 - magents.analyzer_agent - INFO - Extracted 15 job links
+2025-09-21 00:17:15,910 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 15 job links
+2025-09-21 00:17:15,910 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 15 links
+2025-09-21 00:17:15,913 - magents.analyzer_agent - INFO - Best match: 'Consulting jobs' (score: 80.0)
+2025-09-21 00:17:15,913 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:17:15,913 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:17:20,622 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:17:22,641 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:17:22,641 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:17:22,641 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:17:23,874 - tools.html_scraping_tool - INFO - Scraped page: 1805962 characters
+2025-09-21 00:17:23,874 - magents.web_agent - INFO - Scraped page content: 1805962 characters
+2025-09-21 00:17:23,874 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:17:23,875 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:17:24,787 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:17:24,787 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:17:24,788 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:17:24,789 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:17:24,790 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:17:24,790 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:17:24,790 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:17:25,190 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:17:25,190 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:17:25,190 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:17:25,190 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:17:25,191 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:17:25,191 - magents.lead_agent - INFO - Lead Agent cleanup completed
+2025-09-21 00:27:11,131 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:27:11,131 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:27:11,133 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:27:12,537 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:27:12,543 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:27:12,544 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:27:12,546 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:27:12,546 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:27:12,546 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:27:12,546 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:27:12,546 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:27:12,547 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:27:12,547 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:27:12,547 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:27:12,547 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:27:12,547 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:27:18,349 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:27:18,350 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:27:18,350 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:27:18,350 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:27:18,350 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:27:19,991 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:27:19,991 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:27:19,992 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:27:19,993 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:27:25,607 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:27:25,608 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:27:25,608 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:27:25,609 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:27:28,719 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:27:30,723 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:27:30,723 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:27:30,874 - tools.html_scraping_tool - INFO - Scraped page: 167032 characters
+2025-09-21 00:27:30,874 - magents.web_agent - INFO - Scraped page content: 167032 characters
+2025-09-21 00:27:30,875 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:27:30,875 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:27:31,015 - tools.job_matching_tool - INFO - Wrote 233 links to links.json
+2025-09-21 00:27:31,174 - magents.analyzer_agent - INFO - Found careers link: https://careers.services.global.ntt/global/en
+2025-09-21 00:27:31,174 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:27:31,175 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:27:31,175 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:27:37,185 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en
+2025-09-21 00:27:39,197 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:27:39,197 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:27:39,634 - tools.html_scraping_tool - INFO - Scraped page: 1042929 characters
+2025-09-21 00:27:39,635 - magents.web_agent - INFO - Scraped page content: 1042929 characters
+2025-09-21 00:27:39,635 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:27:39,898 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:27:39,898 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:27:39,899 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:27:40,260 - tools.html_scraping_tool - INFO - Scraped page: 1043083 characters
+2025-09-21 00:27:40,260 - magents.web_agent - INFO - Scraped page content: 1043083 characters
+2025-09-21 00:27:40,261 - magents.analyzer_agent - INFO - LLM validating if page contains job listings
+2025-09-21 00:27:40,584 - magents.lead_agent - INFO - Page validation: Unclear - 0 strong, 5 weak indicators
+2025-09-21 00:27:40,662 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:27:40,662 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:27:40,663 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:27:41,149 - tools.html_scraping_tool - INFO - Scraped page: 1043083 characters
+2025-09-21 00:27:41,149 - magents.web_agent - INFO - Scraped page content: 1043083 characters
+2025-09-21 00:27:41,151 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:27:41,151 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:27:41,875 - magents.analyzer_agent - INFO - Extracted 15 job links
+2025-09-21 00:27:41,876 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 15 job links
+2025-09-21 00:27:41,878 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 15 links
+2025-09-21 00:27:41,880 - magents.analyzer_agent - INFO - Best match: 'Consulting jobs' (score: 80.0)
+2025-09-21 00:27:41,880 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:27:41,881 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:27:45,962 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:27:47,969 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:27:47,969 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:27:47,973 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:27:48,872 - tools.html_scraping_tool - INFO - Scraped page: 1811647 characters
+2025-09-21 00:27:48,872 - magents.web_agent - INFO - Scraped page content: 1811647 characters
+2025-09-21 00:27:48,874 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:27:48,875 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:27:49,839 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:27:49,840 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:27:49,843 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:27:49,844 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:27:49,844 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:27:49,844 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:27:49,844 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:27:50,184 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:27:50,184 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:27:50,186 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:27:50,186 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:27:50,186 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:27:50,186 - magents.lead_agent - INFO - Lead Agent cleanup completed
+2025-09-21 00:28:52,204 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:28:52,204 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:28:52,206 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:28:53,547 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:28:53,547 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:28:53,547 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:28:53,547 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:28:53,547 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:28:53,547 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:28:53,547 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:28:53,547 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:28:53,547 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:28:53,551 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:28:53,551 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:28:53,551 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:28:53,551 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:28:56,437 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:28:56,438 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:28:56,439 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:28:56,439 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:28:56,439 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:28:58,109 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:28:58,109 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:28:58,112 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:28:58,112 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:29:03,474 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:29:03,474 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:29:03,475 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:29:03,476 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:29:06,284 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:29:08,290 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:29:08,290 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:29:08,436 - tools.html_scraping_tool - INFO - Scraped page: 168191 characters
+2025-09-21 00:29:08,437 - magents.web_agent - INFO - Scraped page content: 168191 characters
+2025-09-21 00:29:08,439 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:29:08,440 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:29:08,565 - tools.job_matching_tool - INFO - Wrote 233 links to links.json
+2025-09-21 00:29:08,694 - magents.analyzer_agent - INFO - Found careers link: https://careers.services.global.ntt/global/en
+2025-09-21 00:29:08,695 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:29:08,696 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:29:08,696 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:29:14,243 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en
+2025-09-21 00:29:16,251 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:29:16,251 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:29:16,670 - tools.html_scraping_tool - INFO - Scraped page: 1041670 characters
+2025-09-21 00:29:16,671 - magents.web_agent - INFO - Scraped page content: 1041670 characters
+2025-09-21 00:29:16,673 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:29:16,960 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:29:16,961 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:29:16,962 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:29:17,379 - tools.html_scraping_tool - INFO - Scraped page: 1041831 characters
+2025-09-21 00:29:17,379 - magents.web_agent - INFO - Scraped page content: 1041831 characters
+2025-09-21 00:29:17,381 - magents.analyzer_agent - INFO - LLM validating if page contains job listings
+2025-09-21 00:29:17,687 - magents.lead_agent - INFO - Page validation: Unclear - 0 strong, 5 weak indicators
+2025-09-21 00:29:17,695 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:29:17,695 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:29:17,695 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:29:18,141 - tools.html_scraping_tool - INFO - Scraped page: 1042812 characters
+2025-09-21 00:29:18,142 - magents.web_agent - INFO - Scraped page content: 1042812 characters
+2025-09-21 00:29:18,143 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:29:18,144 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:29:18,782 - magents.analyzer_agent - INFO - Extracted 15 job links
+2025-09-21 00:29:18,782 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 15 job links
+2025-09-21 00:29:18,784 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 15 links
+2025-09-21 00:29:18,787 - magents.analyzer_agent - INFO - Best match: 'Consulting jobs' (score: 80.0)
+2025-09-21 00:29:18,787 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:29:18,788 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:29:24,338 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en/NTT_DATA_Consulting_Careers
+2025-09-21 00:29:26,361 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:29:26,361 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:29:26,363 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:29:27,297 - tools.html_scraping_tool - INFO - Scraped page: 1811647 characters
+2025-09-21 00:29:27,297 - magents.web_agent - INFO - Scraped page content: 1811647 characters
+2025-09-21 00:29:27,299 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:29:27,299 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:29:28,333 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:29:28,334 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:29:28,339 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:29:28,340 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:29:28,340 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:29:28,340 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:29:28,341 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:29:28,765 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:29:28,766 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:29:28,768 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:29:28,768 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:29:28,769 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:29:28,769 - magents.lead_agent - INFO - Lead Agent cleanup completed
+2025-09-21 00:34:58,310 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-21 00:34:58,311 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-21 00:34:58,311 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-21 00:34:59,712 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-21 00:34:59,725 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-21 00:34:59,725 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-21 00:34:59,725 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-21 00:34:59,725 - tools.search_tool - INFO - Search Tool initialized
+2025-09-21 00:34:59,729 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-21 00:34:59,731 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-21 00:34:59,732 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-21 00:34:59,732 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-21 00:34:59,732 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-21 00:34:59,732 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-21 00:34:59,733 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-21 00:34:59,742 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-21 00:35:09,202 - __main__ - INFO - Starting job scrape for: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:35:09,202 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'consultor sap fi', 'company_name': 'ntt data', 'company_domain': None, 'location': None}
+2025-09-21 00:35:09,203 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-21 00:35:09,203 - magents.web_agent - INFO - Web Agent searching for company: ntt data
+2025-09-21 00:35:09,203 - tools.search_tool - INFO - Searching for company website: ntt data
+2025-09-21 00:35:10,662 - tools.search_tool - INFO - Successfully parsed 5 search results
+2025-09-21 00:35:10,663 - tools.search_tool - INFO - Found 5 quality search results for: ntt data official website
+2025-09-21 00:35:10,664 - tools.search_tool - INFO - Found company website: https://www.nttdata.com/global/en/ (confidence: high)
+2025-09-21 00:35:10,664 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:35:16,194 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:35:16,195 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-21 00:35:16,196 - magents.web_agent - INFO - Web Agent navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:35:16,197 - tools.web_navigation_tool - INFO - Navigating to: https://www.nttdata.com/global/en/
+2025-09-21 00:35:20,017 - tools.web_navigation_tool - INFO - Navigation successful: https://www.nttdata.com/global/en/
+2025-09-21 00:35:22,019 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:35:22,019 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:35:22,165 - tools.html_scraping_tool - INFO - Scraped page: 166988 characters
+2025-09-21 00:35:22,166 - magents.web_agent - INFO - Scraped page content: 166988 characters
+2025-09-21 00:35:22,166 - magents.analyzer_agent - INFO - Analyzer Agent finding careers link
+2025-09-21 00:35:22,166 - tools.job_matching_tool - INFO - Finding careers page link
+2025-09-21 00:35:22,298 - tools.job_matching_tool - INFO - Wrote 233 links to links.json
+2025-09-21 00:35:22,437 - magents.analyzer_agent - INFO - Found careers link: https://careers.services.global.ntt/global/en
+2025-09-21 00:35:22,437 - magents.lead_agent - INFO - Step 3: Analyzing careers page structure
+2025-09-21 00:35:22,437 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:35:22,438 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en
+2025-09-21 00:35:28,143 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en
+2025-09-21 00:35:30,152 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:35:30,152 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:35:30,584 - tools.html_scraping_tool - INFO - Scraped page: 1042924 characters
+2025-09-21 00:35:30,584 - magents.web_agent - INFO - Scraped page content: 1042924 characters
+2025-09-21 00:35:30,585 - magents.analyzer_agent - INFO - Analyzer Agent analyzing page structure
+2025-09-21 00:35:30,864 - magents.lead_agent - INFO - Step 4: Finding job listings
+2025-09-21 00:35:30,864 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:35:30,865 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:35:31,265 - tools.html_scraping_tool - INFO - Scraped page: 1047226 characters
+2025-09-21 00:35:31,266 - magents.web_agent - INFO - Scraped page content: 1047226 characters
+2025-09-21 00:35:31,266 - magents.analyzer_agent - INFO - LLM deciding action for careers page (looking for: consultor sap fi)
+2025-09-21 00:35:31,603 - magents.lead_agent - INFO - LLM Decision: Found job search functionality: search for job title, keyword or location
+2025-09-21 00:35:31,603 - magents.web_agent - INFO - Web Agent searching for jobs on page: consultor sap fi
+2025-09-21 00:35:31,604 - tools.html_scraping_tool - INFO - Extracting form information
+2025-09-21 00:35:32,109 - tools.html_scraping_tool - INFO - Found 1 forms
+2025-09-21 00:35:32,110 - tools.web_navigation_tool - INFO - Performing fill on element: #typehead
+2025-09-21 00:35:32,303 - tools.web_navigation_tool - INFO - Performing submit on element: #typehead
+2025-09-21 00:35:38,601 - magents.lead_agent - INFO - Step 5: Finding specific job match
+2025-09-21 00:35:38,601 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:35:38,604 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:35:39,120 - tools.html_scraping_tool - INFO - Scraped page: 1381096 characters
+2025-09-21 00:35:39,121 - magents.web_agent - INFO - Scraped page content: 1381096 characters
+2025-09-21 00:35:39,123 - magents.analyzer_agent - INFO - Analyzer Agent extracting job links
+2025-09-21 00:35:39,126 - tools.html_scraping_tool - INFO - Extracting job-related links
+2025-09-21 00:35:39,953 - magents.analyzer_agent - INFO - Extracted 26 job links
+2025-09-21 00:35:39,953 - magents.analyzer_agent - INFO - Analyzer Agent finding best match from 26 job links
+2025-09-21 00:35:39,957 - tools.job_matching_tool - INFO - Finding best job match for 'consultor sap fi' from 26 links
+2025-09-21 00:35:39,963 - magents.analyzer_agent - INFO - Best match: 'Consultor SAP FI' (score: 156.4)
+2025-09-21 00:35:39,963 - magents.web_agent - INFO - Web Agent navigating to: https://careers.services.global.ntt/global/en/job/1e01da45536e540/Consultor-SAP-FI
+2025-09-21 00:35:39,965 - tools.web_navigation_tool - INFO - Navigating to: https://careers.services.global.ntt/global/en/job/1e01da45536e540/Consultor-SAP-FI
+2025-09-21 00:35:42,801 - tools.web_navigation_tool - INFO - Navigation successful: https://careers.services.global.ntt/global/en/job/1e01da45536e540/Consultor-SAP-FI
+2025-09-21 00:35:44,797 - magents.lead_agent - INFO - Step 6: Extracting job data
+2025-09-21 00:35:44,798 - magents.web_agent - INFO - Web Agent scraping current page
+2025-09-21 00:35:44,800 - tools.html_scraping_tool - INFO - Scraping current page content
+2025-09-21 00:35:45,175 - tools.html_scraping_tool - INFO - Scraped page: 1749898 characters
+2025-09-21 00:35:45,175 - magents.web_agent - INFO - Scraped page content: 1749898 characters
+2025-09-21 00:35:45,177 - magents.analyzer_agent - INFO - Analyzer Agent extracting structured job data
+2025-09-21 00:35:45,178 - tools.job_matching_tool - INFO - Extracting structured job data
+2025-09-21 00:35:45,543 - magents.analyzer_agent - INFO - Job data extracted successfully
+2025-09-21 00:35:45,544 - magents.lead_agent - INFO - Job scraping workflow completed successfully
+2025-09-21 00:35:45,548 - __main__ - INFO - Job scraping completed. Results saved to output.json
+2025-09-21 00:35:45,549 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-21 00:35:45,549 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-21 00:35:45,549 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-21 00:35:45,550 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool
+2025-09-21 00:35:45,927 - tools.web_navigation_tool - INFO - Web Navigation Tool cleanup completed
+2025-09-21 00:35:45,927 - tools.html_scraping_tool - INFO - Cleaning up HTML Scraping Tool resources
+2025-09-21 00:35:45,930 - tools.search_tool - INFO - Cleaning up Search Tool resources
+2025-09-21 00:35:45,930 - tools.search_tool - INFO - Search Tool cleanup completed
+2025-09-21 00:35:45,930 - tools.job_matching_tool - INFO - Cleaning up Job Matching Tool resources
+2025-09-21 00:35:45,930 - magents.lead_agent - INFO - Lead Agent cleanup completed
