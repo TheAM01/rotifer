@@ -2,3 +2,6 @@
 venv
 links.json
 __pycache__
+test-cases.txt
+documents
+output

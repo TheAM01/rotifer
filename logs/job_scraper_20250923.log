@@ -1,0 +1,26 @@
+2025-09-23 23:57:26,930 - __main__ - INFO - Initializing Job Scraper System with OpenAI Agents SDK
+2025-09-23 23:57:26,931 - magents.lead_agent - INFO - Initializing Lead Agent with OpenAI Agents SDK
+2025-09-23 23:57:26,931 - tools.web_navigation_tool - INFO - Initializing Web Navigation Tool for OpenAI Agents SDK
+2025-09-23 23:57:39,277 - tools.web_navigation_tool - INFO - Web Navigation Tool initialized successfully
+2025-09-23 23:57:39,289 - tools.html_scraping_tool - INFO - Initializing HTML Scraping Tool for OpenAI Agents SDK
+2025-09-23 23:57:39,291 - tools.html_scraping_tool - INFO - HTML Scraping Tool initialized
+2025-09-23 23:57:39,296 - tools.search_tool - INFO - Initializing Search Tool for OpenAI Agents SDK
+2025-09-23 23:57:39,298 - tools.search_tool - INFO - Search Tool initialized
+2025-09-23 23:57:39,298 - tools.job_matching_tool - INFO - Initializing Job Matching Tool for OpenAI Agents SDK
+2025-09-23 23:57:39,298 - tools.job_matching_tool - INFO - Job Matching Tool initialized
+2025-09-23 23:57:39,299 - magents.web_agent - INFO - Initializing Web Agent with OpenAI Agents SDK
+2025-09-23 23:57:39,299 - magents.web_agent - INFO - Web Agent initialized with all tools registered
+2025-09-23 23:57:39,305 - magents.analyzer_agent - INFO - Initializing Analyzer Agent with OpenAI Agents SDK
+2025-09-23 23:57:39,305 - magents.analyzer_agent - INFO - Analyzer Agent initialized with all tools registered
+2025-09-23 23:57:39,305 - magents.lead_agent - INFO - All agents and tools initialized successfully
+2025-09-23 23:57:39,306 - __main__ - INFO - Job Scraper System initialized successfully
+2025-09-24 00:32:48,048 - __main__ - INFO - Starting job scrape for: {'job_title': 'c', 'company_name': 'c', 'company_domain': 'c', 'location': 'c'}
+2025-09-24 00:32:48,049 - magents.lead_agent - INFO - Lead Agent processing job request: {'job_title': 'c', 'company_name': 'c', 'company_domain': 'c', 'location': 'c'}
+2025-09-24 00:32:48,049 - magents.lead_agent - INFO - Step 1: Determining company URL
+2025-09-24 00:32:48,049 - magents.lead_agent - INFO - Step 2: Finding careers page
+2025-09-24 00:32:48,049 - magents.web_agent - INFO - Web Agent navigating to: https://c
+2025-09-24 00:32:48,049 - tools.web_navigation_tool - INFO - Navigating to: https://c
+2025-09-24 00:32:48,697 - magents.lead_agent - INFO - Cleaning up Lead Agent resources
+2025-09-24 00:32:48,697 - magents.web_agent - INFO - Cleaning up Web Agent resources
+2025-09-24 00:32:48,699 - magents.analyzer_agent - INFO - Cleaning up Analyzer Agent resources
+2025-09-24 00:32:48,699 - tools.web_navigation_tool - INFO - Cleaning up Web Navigation Tool

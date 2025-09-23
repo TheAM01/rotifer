@@ -4,7 +4,7 @@ Lead Agent - Main orchestrator using OpenAI Agents SDK
 
 import asyncio
 import json
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 from agents import Agent, function_tool
 from magents.web_agent import WebAgent
@@ -120,12 +120,8 @@ class LeadAgent(Agent):
             job_listings_url = await self._find_job_listings(careers_analysis, job_params)
             
             # Step 5: Find specific job match
-            logger.info("Step 5: Finding specific job match")
-            specific_job_url = await self._find_specific_job(job_listings_url, job_params)
-            
-            # Step 6: Extract job data
-            logger.info("Step 6: Extracting job data")
-            job_data = await self._extract_job_data(specific_job_url, job_params)
+            logger.info("Step 5: Finding all specific job matches")
+            scraped_jobs = await self._find_and_scrape_all_jobs(job_listings_url, job_params)
             
             # Compile final results
             result = {
@@ -134,10 +130,10 @@ class LeadAgent(Agent):
                 "workflow_steps": {
                     "company_url": company_url,
                     "careers_url": careers_url,
-                    "job_listings_url": job_listings_url,
-                    "specific_job_url": specific_job_url
+                    "job_listings_url": job_listings_url
                 },
-                "job_data": job_data,
+                "jobs_found": len(scraped_jobs),
+                "all_job_data": scraped_jobs,  # List of all jobs
                 "timestamp": asyncio.get_event_loop().time()
             }
             
@@ -237,12 +233,13 @@ class LeadAgent(Agent):
             # Fallback: analyze all links
             return await self._fallback_link_analysis(page_content, job_params)
             
-    async def _find_specific_job(self, job_listings_url: str, job_params: Dict[str, Any]) -> str:
-        """Find specific job posting"""
+    async def _find_and_scrape_all_jobs(self, job_listings_url: str, job_params: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Find and scrape ALL matching job postings"""
+        
         # Get current page content
         page_content = await self.web_agent.scrape_current_page()
         
-        # Extract job links using Analyzer Agent
+        # Extract job links
         job_links_result = await self.analyzer_agent.extract_job_links(
             page_content["html_content"],
             job_params
@@ -251,16 +248,53 @@ class LeadAgent(Agent):
         if not job_links_result.get("job_links"):
             raise Exception("No job listings found on the page")
             
-        # Find best match using Analyzer Agent
-        best_match = await self.analyzer_agent.find_best_job_match(
+        # Find ALL matches (not just best)
+        all_matches = await self.analyzer_agent.find_all_job_matches(
             job_links_result["job_links"],
             job_params
         )
         
-        # Navigate to the best matching job
-        await self.web_agent.navigate_to_url(best_match["url"])
+        if not all_matches.get("matches"):
+            raise Exception("No matching jobs found")
         
-        return best_match["url"]
+        logger.info(f"Found {len(all_matches['matches'])} matching jobs to scrape")
+        
+        # Scrape each matching job
+        scraped_jobs = []
+        
+        for i, job_match in enumerate(all_matches["matches"]):
+            try:
+                logger.info(f"Scraping job {i+1}/{len(all_matches['matches'])}: {job_match['title']}")
+                
+                # Navigate to job posting
+                await self.web_agent.navigate_to_url(job_match["url"])
+                await asyncio.sleep(2)  # Wait for page load
+                
+                # Scrape job content
+                job_page_content = await self.web_agent.scrape_current_page()
+                
+                # Extract enhanced job data
+                job_data_result = await self.analyzer_agent.extract_enhanced_job_data(
+                    job_page_content["html_content"],
+                    job_params
+                )
+                
+                if job_data_result.get("success"):
+                    job_data = job_data_result["job_data"]
+                    job_data["match_score"] = job_match["match_score"]
+                    job_data["job_url"] = job_match["url"]
+                    job_data["scrape_order"] = i + 1
+                    
+                    scraped_jobs.append(job_data)
+                    logger.info(f"Successfully scraped job: {job_data.get('title', 'Unknown')}")
+                else:
+                    logger.warning(f"Failed to extract data from: {job_match['title']}")
+                    
+            except Exception as e:
+                logger.error(f"Error scraping job {job_match['title']}: {str(e)}")
+                continue
+        
+        return scraped_jobs
         
     async def _extract_job_data(self, job_url: str, job_params: Dict[str, Any]) -> Dict[str, Any]:
         """Extract job data using Analyzer Agent"""
@@ -274,6 +308,9 @@ class LeadAgent(Agent):
         )
         
         return job_data["job_data"]
+    
+    async def _fallback_link_analysis(self, page_content, job_params):
+        return self.web_nav_tool.current_url
         
     async def cleanup(self):
         """Cleanup all resources"""

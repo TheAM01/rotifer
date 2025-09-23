@@ -1,32 +1,283 @@
 {
   "success": true,
   "job_params": {
-    "job_title": "consultor sap fi",
-    "company_name": "ntt data",
+    "job_title": "Inhouse-SAP-Berater FI (w/m/d)",
+    "company_name": "Salzgitter Mannesmann Handel",
     "company_domain": null,
-    "location": null
+    "location": "Mülheim an der Ruhr, Nordrhein-Westfalen"
   },
   "workflow_steps": {
-    "company_url": "https://www.nttdata.com/global/en/",
-    "careers_url": "https://careers.services.global.ntt/global/en",
-    "job_listings_url": "https://careers.services.global.ntt/global/en/search-results?keywords=consultor%20sap%20fi",
-    "specific_job_url": "https://careers.services.global.ntt/global/en/job/1e01da45536e540/Consultor-SAP-FI"
+    "company_url": "https://www.salzgitter-mannesmann-handel.de/en/",
+    "careers_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers",
+    "job_listings_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers"
   },
-  "job_data": {
-    "title": "Consultor SAP FI",
-    "company": "ntt data",
-    "location": "Lima, Peru",
-    "employment_type": "Full-Time",
-    "department": null,
-    "salary_range": null,
-    "requirements": [],
-    "responsibilities": [],
-    "description": "Consultor SAP FI job in Lima, Peru | Enterprise Solutions jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsultor SAP FI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocation\n\n Lima, Peru\n        \n\n\n\n\n\n\n\nCategory\n\n Enterprise Solutions\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading. Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\nEn NTT Data te brindamos una excelente oportunidad para seguir creciendo y desarrollándote como profesional, por ello estamos en búsqueda de nuevos perfiles orientados a SAP con experiencia en cualquiera de los siguientes módulos: SAP FI\nBeneficios- Contrato indefinido desde el primer día de labores. - Inmejorable oportunidad de línea de carrera profesional en nuestra consultora líder en el mercado TI, permanente capacitación y formación profesional. - EPS y seguro oncológico cubierto al 100%. - Tarjeta de alimentación.",
-    "benefits": [],
-    "experience_level": null,
-    "remote_option": null,
-    "posted_date": null,
-    "application_deadline": null
-  },
-  "timestamp": 2434.25
+  "jobs_found": 6,
+  "all_job_data": [
+    {
+      "title": "Inhouse SAP-Berater FI (w/m/d)",
+      "company": "Salzgitter Mannesmann Handel",
+      "location": ".com",
+      "employment_type": "Internship",
+      "department": null,
+      "salary_range": null,
+      "requirements": [],
+      "responsibilities": [],
+      "description": "Inhouse SAP-Berater FI (w/m/d) | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services. Some of those are essential. Others help us to deliver a better experience. Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website. Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed.",
+      "benefits": [
+        "Für Ihr leibliches Wohl steht Ihnen unsere betriebseigene Kantine zur Verfügung",
+        "Ihre persönliche und fachliche Weiterentwicklung ist uns wichtig Einsatzort"
+      ],
+      "experience_level": null,
+      "remote_option": "Hybrid",
+      "posted_date": null,
+      "application_deadline": null,
+      "location_details": {
+        "basic_location": ".com",
+        "city_state": "video platforms and social media providers",
+        "on_site": "office"
+      },
+      "summary": [
+        "Inhouse SAP-Berater FI (w/m/d) | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services",
+        "Others help us to deliver a better experience",
+        "Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Some of those are essential",
+        "Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website"
+      ],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [
+        "die betriebliche Altersvorsorge und die Salzgitter-Rente  \nGestalten Sie Ihre Work-Life-Balance im Rahmen unseres flexiblen Arbeitszeitmodells und unserer Mobile-Working-Regelungen  \nSie profitieren von attraktiven Vergünstigungen im Rahmen unserer Corporate Benefits  \nFür Ihr leibliches Wohl steht Ihnen unsere betriebseigene Kantine zur Verfügung  \nIhre persönliche und fachliche Weiterentwicklung ist uns wichtig Einsatzort: Mülheim an der Ruhr\n      ǀ Nordrhein-Westfalen\n      \n    \n\n\n\n        Show map\n      \n\n\n\n\n        Salzgitter Mannesmann Handel GmbH\n      \n\n        Wiesenstraße 36,\n        45473 Mülheim an der Ruhr,\n        Deutschland\n      \n\n\n\nInteressiert"
+      ],
+      "company_culture": [],
+      "metadata": {
+        "team_department": "orientierung"
+      },
+      "match_score": 124.0,
+      "job_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers?tx_szagcareerfrontend_job%5Baction%5D=show&tx_szagcareerfrontend_job%5Bposition%5D=4977&cHash=6e2b505366fbf4b3123b480bf990ab0c",
+      "scrape_order": 1
+    },
+    {
+      "title": "Inhouse SAP-Berater SD (w/m/d)",
+      "company": "Salzgitter Mannesmann Handel",
+      "location": ".com",
+      "employment_type": "Internship",
+      "department": null,
+      "salary_range": null,
+      "requirements": [],
+      "responsibilities": [],
+      "description": "Inhouse SAP-Berater SD (w/m/d) | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services. Some of those are essential. Others help us to deliver a better experience. Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website. Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed.",
+      "benefits": [
+        "Für Ihr leibliches Wohl steht Ihnen unsere betriebseigene Kantine zur Verfügung",
+        "Ihre persönliche und fachliche Weiterentwicklung ist uns wichtig Einsatzort"
+      ],
+      "experience_level": null,
+      "remote_option": "Hybrid",
+      "posted_date": null,
+      "application_deadline": null,
+      "location_details": {
+        "basic_location": ".com",
+        "city_state": "video platforms and social media providers",
+        "on_site": "office"
+      },
+      "summary": [
+        "Inhouse SAP-Berater SD (w/m/d) | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services",
+        "Others help us to deliver a better experience",
+        "Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Some of those are essential",
+        "Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website"
+      ],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [
+        "die betriebliche Altersvorsorge und die Salzgitter-Rente  \nGestalten Sie Ihre Work-Life-Balance im Rahmen unseres flexiblen Arbeitszeitmodells und unserer Mobile-Working-Regelungen  \nSie profitieren von attraktiven Vergünstigungen im Rahmen unserer Corporate Benefits  \nFür Ihr leibliches Wohl steht Ihnen unsere betriebseigene Kantine zur Verfügung  \nIhre persönliche und fachliche Weiterentwicklung ist uns wichtig Einsatzort: Mülheim an der Ruhr\n      ǀ Nordrhein-Westfalen\n      \n    \n\n\n\n        Show map\n      \n\n\n\n\n        Salzgitter Mannesmann Handel GmbH\n      \n\n        Wiesenstraße 36,\n        45473 Mülheim an der Ruhr,\n        Deutschland\n      \n\n\n\nInteressiert"
+      ],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "uests"
+      },
+      "match_score": 113.0,
+      "job_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers?tx_szagcareerfrontend_job%5Baction%5D=show&tx_szagcareerfrontend_job%5Bposition%5D=4978&cHash=932412e094a25858717a7d5085235f80",
+      "scrape_order": 2
+    },
+    {
+      "title": "Inhouse SAP-Berater SD/LE (w/m/d)",
+      "company": "Salzgitter Mannesmann Handel",
+      "location": ".com",
+      "employment_type": "Internship",
+      "department": null,
+      "salary_range": null,
+      "requirements": [],
+      "responsibilities": [],
+      "description": "Inhouse SAP-Berater SD/LE (w/m/d) | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services. Some of those are essential. Others help us to deliver a better experience. Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website. Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed.",
+      "benefits": [
+        "Für Ihr leibliches Wohl steht Ihnen unsere betriebseigene Kantine zur Verfügung",
+        "Ihre persönliche und fachliche Weiterentwicklung ist uns wichtig Einsatzort"
+      ],
+      "experience_level": null,
+      "remote_option": "Hybrid",
+      "posted_date": null,
+      "application_deadline": null,
+      "location_details": {
+        "basic_location": ".com",
+        "city_state": "video platforms and social media providers",
+        "on_site": "office"
+      },
+      "summary": [
+        "Inhouse SAP-Berater SD/LE (w/m/d) | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services",
+        "Others help us to deliver a better experience",
+        "Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Some of those are essential",
+        "Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website"
+      ],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [
+        "die betriebliche Altersvorsorge und die Salzgitter-Rente  \nGestalten Sie Ihre Work-Life-Balance im Rahmen unseres flexiblen Arbeitszeitmodells und unserer Mobile-Working-Regelungen  \nSie profitieren von attraktiven Vergünstigungen im Rahmen unserer Corporate Benefits  \nFür Ihr leibliches Wohl steht Ihnen unsere betriebseigene Kantine zur Verfügung  \nIhre persönliche und fachliche Weiterentwicklung ist uns wichtig Einsatzort: Mülheim an der Ruhr\n      ǀ Nordrhein-Westfalen\n      \n    \n\n\n\n        Show map\n      \n\n\n\n\n        Salzgitter Mannesmann Handel GmbH\n      \n\n        Wiesenstraße 36,\n        45473 Mülheim an der Ruhr,\n        Deutschland\n      \n\n\n\nInteressiert"
+      ],
+      "company_culture": [],
+      "metadata": {},
+      "match_score": 109.0,
+      "job_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers?tx_szagcareerfrontend_job%5Baction%5D=show&tx_szagcareerfrontend_job%5Bposition%5D=4980&cHash=1d71aed53f8d0ffe8210f21003e3f59e",
+      "scrape_order": 3
+    },
+    {
+      "title": "Inhouse-SAP-Berater FI (w/m/d)",
+      "company": "Salzgitter Mannesmann Handel",
+      "location": ".com",
+      "employment_type": null,
+      "department": null,
+      "salary_range": null,
+      "requirements": [],
+      "responsibilities": [],
+      "description": "Job offers | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services. Some of those are essential. Others help us to deliver a better experience. Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website. Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed.",
+      "benefits": [],
+      "experience_level": "Senior",
+      "remote_option": null,
+      "posted_date": null,
+      "application_deadline": null,
+      "location_details": {
+        "basic_location": ".com",
+        "city_state": "video platforms and social media providers",
+        "on_site": "office"
+      },
+      "summary": [
+        "Job offers | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services",
+        "Others help us to deliver a better experience",
+        "Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Some of those are essential",
+        "Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website"
+      ],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "Loading"
+      },
+      "match_score": 96.9,
+      "job_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers",
+      "scrape_order": 4
+    },
+    {
+      "title": "Inhouse-SAP-Berater FI (w/m/d)",
+      "company": "Salzgitter Mannesmann Handel",
+      "location": ".com",
+      "employment_type": null,
+      "department": null,
+      "salary_range": null,
+      "requirements": [],
+      "responsibilities": [],
+      "description": "Job offers | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services. Some of those are essential. Others help us to deliver a better experience. Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website. Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed.",
+      "benefits": [],
+      "experience_level": "Senior",
+      "remote_option": null,
+      "posted_date": null,
+      "application_deadline": null,
+      "location_details": {
+        "basic_location": ".com",
+        "city_state": "video platforms and social media providers",
+        "on_site": "office"
+      },
+      "summary": [
+        "Job offers | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services",
+        "Others help us to deliver a better experience",
+        "Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Some of those are essential",
+        "Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website"
+      ],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "Loading"
+      },
+      "match_score": 91.9,
+      "job_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers",
+      "scrape_order": 5
+    },
+    {
+      "title": "Inhouse-SAP-Berater FI (w/m/d)",
+      "company": "Salzgitter Mannesmann Handel",
+      "location": ".com",
+      "employment_type": null,
+      "department": null,
+      "salary_range": null,
+      "requirements": [],
+      "responsibilities": [],
+      "description": "Job offers | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services. Some of those are essential. Others help us to deliver a better experience. Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website. Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed.",
+      "benefits": [],
+      "experience_level": "Senior",
+      "remote_option": null,
+      "posted_date": null,
+      "application_deadline": null,
+      "location_details": {
+        "basic_location": ".com",
+        "city_state": "video platforms and social media providers",
+        "on_site": "office"
+      },
+      "summary": [
+        "Job offers | Salzgitter Mannesmann Handel GmbH\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData protection settings: This website uses Cookies and third party services",
+        "Others help us to deliver a better experience",
+        "Name\n                                                        CookieConsent\n                                                    \n\n\n\nStatus\n\n\n\n\n\n                                                                    Enable\n                                                                \n\n\n\n\nExplanation\n                                                        \nSaves the visitors' settings, which services and cookies should be allowed"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Some of those are essential",
+        "Essential\n\nShow details\n\n\n\n\n\nEnabled\n\n\n\n\nEssential cookies enable basic functions and are necessary for the proper functioning and use of the website"
+      ],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "Loading"
+      },
+      "match_score": 88.9,
+      "job_url": "https://www.salzgitter-mannesmann-handel.de/en/career/job-offers",
+      "scrape_order": 6
+    }
+  ],
+  "timestamp": 14450.406
 }

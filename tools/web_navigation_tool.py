@@ -10,7 +10,7 @@ from utils.logger import setup_logger
 logger = setup_logger(__name__)
 
 class WebNavigationTool:
-    def __init__(self, headless: bool = False, slow_mo: int = 100):
+    def __init__(self, headless: bool = True, slow_mo: int = 100):
         self.playwright = None
         self.browser = None
         self.context = None

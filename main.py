@@ -5,6 +5,8 @@ Job Scraper Main Script - Using OpenAI Agents SDK
 
 import asyncio
 import json
+import sys
+import io
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -15,6 +17,10 @@ from utils.logger import setup_logger
 
 # Load environment variables
 load_dotenv()
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
+
 
 logger = setup_logger(__name__)
 

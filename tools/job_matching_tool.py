@@ -500,7 +500,235 @@ class JobMatchingTool:
                 break
                 
         return benefits[:10]  # Limit to 10 benefits
+    
+    async def find_all_job_matches(self, job_links: List[Dict], job_params: Dict[str, Any]) -> Dict[str, Any]:
+        """Find ALL job matches above a threshold, not just the best one"""
+        logger.info(f"Finding all job matches for '{job_params['job_title']}' from {len(job_links)} links")
         
+        try:
+            job_title = job_params.get("job_title", "") or ""
+            location = job_params.get("location") or ""
+
+            if not job_title:
+                return {"success": False, "error": "No job title provided"}
+
+            job_title = job_title.lower()
+            location = location.lower()
+            
+            all_matches = []
+            threshold_score = 80  # Minimum score to consider a match
+            
+            for link in job_links:
+                title = link.get('title') 
+                url = link.get('url', '')
+                
+                # Skip links with None or empty titles
+                if not title:
+                    continue
+                
+                title_lower = title.lower()  # Now safe to call .lower()
+                url_lower = url.lower() if url else ''
+                
+                # Calculate similarity scores (same logic as before)
+                title_similarity = fuzz.token_sort_ratio(job_title, title)
+                partial_similarity = fuzz.partial_ratio(job_title, title)
+                url_similarity = fuzz.partial_ratio(job_title, url)
+                
+                base_score = max(title_similarity, partial_similarity * 0.8)
+                url_bonus = url_similarity * 0.3
+                
+                location_bonus = 0
+                if location and location in title:
+                    location_bonus = 20
+                elif location and location in url:
+                    location_bonus = 10
+                    
+                job_keywords = job_title.split()
+                keyword_bonus = 0
+                for keyword in job_keywords:
+                    if len(keyword) > 2 and keyword in title:
+                        keyword_bonus += 15
+                        
+                total_score = base_score + url_bonus + location_bonus + keyword_bonus
+                
+                # Only include if above threshold
+                if total_score >= threshold_score:
+                    all_matches.append({
+                        **link,
+                        'match_score': total_score,
+                        'title_similarity': title_similarity,
+                        'partial_similarity': partial_similarity
+                    })
+            
+            # Sort by score
+            all_matches.sort(key=lambda x: x['match_score'], reverse=True)
+            
+            logger.info(f"Found {len(all_matches)} job matches above threshold ({threshold_score})")
+            
+            return {
+                "success": True,
+                "matches": all_matches,
+                "total_matches": len(all_matches),
+                "threshold_used": threshold_score
+            }
+            
+        except Exception as e:
+            logger.error(f"Job matching failed: {str(e)}")
+            return {"success": False, "error": str(e)}
+    
+
+    async def extract_enhanced_job_data(self, html_content: str, job_params: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract and intelligently parse job data with LLM analysis"""
+        logger.info("Extracting enhanced job data with LLM analysis")
+        
+        try:
+            soup = BeautifulSoup(html_content, 'html.parser')
+            
+            # Remove noise
+            for script in soup(["script", "style", "nav", "footer", "header"]):
+                script.decompose()
+                
+            text_content = soup.get_text()
+            
+            # Basic extraction (existing logic)
+            basic_job_data = await self.extract_job_data(html_content, job_params)
+            
+            if not basic_job_data.get("success"):
+                return basic_job_data
+                
+            job_data = basic_job_data["job_data"]
+            
+            # Enhanced location extraction
+            enhanced_location = await self._extract_enhanced_location(text_content, job_data.get("location"))
+            job_data["location_details"] = enhanced_location
+            
+            # LLM-powered description breakdown
+            description_breakdown = await self._breakdown_job_description(text_content)
+            job_data.update(description_breakdown)
+            
+            # Extract additional metadata
+            metadata = await self._extract_job_metadata(text_content)
+            job_data["metadata"] = metadata
+            
+            return {
+                "success": True,
+                "job_data": job_data,
+                "extraction_type": "enhanced"
+            }
+            
+        except Exception as e:
+            logger.error(f"Enhanced job data extraction failed: {str(e)}")
+            return {"success": False, "error": str(e)}
+
+    async def _extract_enhanced_location(self, text: str, basic_location: str) -> Dict[str, Any]:
+        """Extract detailed location information"""
+        location_patterns = {
+            'full_address': r'(\d+[^,\n]*,\s*[^,\n]+,\s*[A-Z]{2}\s*\d{5})',
+            'city_state': r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*),\s*([A-Z]{2})\b',
+            'country': r'\b(United States|USA|UK|United Kingdom|Germany|France|Canada|Australia)\b',
+            'remote_hybrid': r'\b(remote|hybrid|work from home|telecommute|flexible)\b',
+            'on_site': r'\b(on-?site|office|in-person)\b'
+        }
+        
+        location_info = {"basic_location": basic_location}
+        
+        for key, pattern in location_patterns.items():
+            matches = re.findall(pattern, text, re.IGNORECASE)
+            if matches:
+                location_info[key] = matches[0] if isinstance(matches[0], str) else matches[0][0]
+        
+        return location_info
+
+    async def _breakdown_job_description(self, text: str) -> Dict[str, Any]:
+        """Use LLM-like logic to break down job description into parts"""
+        
+        # Find section markers
+        sections = {
+            'summary': [],
+            'key_responsibilities': [],
+            'required_qualifications': [],
+            'preferred_qualifications': [],
+            'technical_skills': [],
+            'soft_skills': [],
+            'benefits_compensation': [],
+            'company_culture': []
+        }
+        
+        # Split text into sentences
+        sentences = [s.strip() for s in re.split(r'[.!?]+', text) if len(s.strip()) > 10]
+        
+        for sentence in sentences:
+            sentence_lower = sentence.lower()
+            
+            # Classify sentence based on content
+            if any(word in sentence_lower for word in ['responsible for', 'will be', 'you will', 'duties include']):
+                sections['key_responsibilities'].append(sentence)
+            elif any(word in sentence_lower for word in ['required:', 'must have', 'minimum', 'essential']):
+                sections['required_qualifications'].append(sentence)
+            elif any(word in sentence_lower for word in ['preferred', 'nice to have', 'bonus', 'plus']):
+                sections['preferred_qualifications'].append(sentence)
+            elif any(word in sentence_lower for word in ['python', 'java', 'sql', 'aws', 'docker', 'kubernetes', 'react', 'node']):
+                sections['technical_skills'].append(sentence)
+            elif any(word in sentence_lower for word in ['communication', 'teamwork', 'leadership', 'problem solving']):
+                sections['soft_skills'].append(sentence)
+            elif any(word in sentence_lower for word in ['salary', 'benefits', 'health', 'vacation', 'pto', '401k']):
+                sections['benefits_compensation'].append(sentence)
+            elif any(word in sentence_lower for word in ['culture', 'mission', 'values', 'team environment']):
+                sections['company_culture'].append(sentence)
+            elif len(sections['summary']) < 3:  # First few sentences as summary
+                sections['summary'].append(sentence)
+        
+        # Clean up sections
+        for key in sections:
+            sections[key] = sections[key][:5]  # Limit to 5 items per section
+            
+        return sections
+
+    async def _extract_job_metadata(self, text: str) -> Dict[str, Any]:
+        """Extract additional job metadata"""
+        metadata = {}
+        
+        # Extract job ID/reference
+        job_id_patterns = [
+            r'Job ID:?\s*([A-Z0-9-]+)',
+            r'Reference:?\s*([A-Z0-9-]+)',
+            r'Req\.?\s*#?([A-Z0-9-]+)'
+        ]
+        
+        for pattern in job_id_patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                metadata['job_id'] = match.group(1)
+                break
+        
+        # Extract application deadline
+        deadline_patterns = [
+            r'Apply by:?\s*([A-Za-z]+ \d{1,2},? \d{4})',
+            r'Deadline:?\s*([A-Za-z]+ \d{1,2},? \d{4})',
+            r'Closes:?\s*([A-Za-z]+ \d{1,2},? \d{4})'
+        ]
+        
+        for pattern in deadline_patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                metadata['application_deadline'] = match.group(1)
+                break
+        
+        # Extract team/department info
+        team_patterns = [
+            r'Team:?\s*([^.\n]+)',
+            r'Department:?\s*([^.\n]+)',
+            r'Division:?\s*([^.\n]+)'
+        ]
+        
+        for pattern in team_patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                metadata['team_department'] = match.group(1).strip()
+                break
+        
+        return metadata
+
     async def cleanup(self):
         """Cleanup resources"""
         logger.info("Cleaning up Job Matching Tool resources")

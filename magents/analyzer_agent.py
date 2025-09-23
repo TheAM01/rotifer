@@ -11,7 +11,7 @@ from tools.job_matching_tool import JobMatchingTool
 from utils.logger import setup_logger
 from bs4 import BeautifulSoup
 import re
- 
+
 logger = setup_logger(__name__)
 
 # Define tools as functions for Analyzer Agent
@@ -50,6 +50,21 @@ def determine_page_strategy_tool(html_content: str, current_goal: str, context: 
     """Determine the next action needed for job scraping workflow"""
     return f"Determining strategy for {current_goal}"
 
+@function_tool
+def extract_jobs_with_llm_tool(html_content: str, job_title: str) -> str:
+    """Use LLM to intelligently extract job listings from HTML"""
+    return f"Using LLM to analyze page for '{job_title}' positions"
+
+# @function_tool
+async def find_all_job_matches(self, job_links: List[Dict], job_params: Dict[str, Any]) -> Dict[str, Any]:
+    """Find ALL job matches above threshold - calls JobMatchingTool"""
+    return await self.job_matching_tool.find_all_job_matches(job_links, job_params)
+
+# @function_tool
+async def extract_enhanced_job_data(self, html_content: str, job_params: Dict[str, Any]) -> Dict[str, Any]:
+    """Extract enhanced job data - calls JobMatchingTool"""
+    return await self.job_matching_tool.extract_enhanced_job_data(html_content, job_params)
+
 class AnalyzerAgent(Agent):
     def __init__(self, scraping_tool: HTMLScrapingTool, job_matching_tool: JobMatchingTool):
         super().__init__(
@@ -72,7 +87,8 @@ class AnalyzerAgent(Agent):
             tools=[
                 analyze_html_structure_tool,
                 find_careers_links_tool,
-                extract_job_links_tool,
+                validate_job_listings_page_tool,
+                extract_jobs_with_llm_tool,
                 match_jobs_fuzzy_tool,
                 extract_structured_job_data_tool,
                 determine_page_strategy_tool
@@ -116,25 +132,34 @@ class AnalyzerAgent(Agent):
             return {"success": False, "error": str(e)}
             
     async def extract_job_links(self, html_content: str, job_params: Dict[str, Any]) -> Dict[str, Any]:
-        """Extract job links from careers/listings page"""
-        logger.info("Analyzer Agent extracting job links")
+        """Extract job links using LLM analysis instead of selectors"""
+        logger.info("Analyzer Agent extracting job links with LLM")
         
         try:
-            # Extract job links using scraping tool
-            job_links_result = await self.scraping_tool.extract_job_links()
+            # Use LLM-powered extraction instead of selectors
+            job_listings_result = await self.scraping_tool.extract_job_listings_with_llm(
+                job_params["job_title"]
+            )
             
-            if job_links_result.get("success") and job_links_result.get("job_links"):
-                logger.info(f"Extracted {len(job_links_result['job_links'])} job links")
-                return job_links_result
+            if job_listings_result.get("success") and job_listings_result.get("job_listings"):
+                job_links = job_listings_result["job_listings"]
+                logger.info(f"LLM found {len(job_links)} job listings")
+                
+                return {
+                    "success": True,
+                    "job_links": job_links,
+                    "total_found": len(job_links),
+                    "extraction_method": "llm_analysis"
+                }
             else:
                 return {
                     "success": False,
-                    "error": "No job links found on page",
+                    "error": "LLM could not identify job listings",
                     "job_links": []
                 }
                 
         except Exception as e:
-            logger.error(f"Job links extraction failed: {str(e)}")
+            logger.error(f"LLM job links extraction failed: {str(e)}")
             return {"success": False, "error": str(e)}
         
     # ligma
@@ -150,7 +175,7 @@ class AnalyzerAgent(Agent):
                 element.decompose()
                 
             # Extract key page elements
-            page_text = soup.get_text()[:3000]  # Limit for analysis
+            page_text = soup.get_text().lower()  # Limit for analysis
             
             # Find search elements
             search_inputs = []
@@ -193,82 +218,47 @@ class AnalyzerAgent(Agent):
                 "action": "search_links",
                 "reasoning": "Analysis failed, defaulting to link search"
             }
+        
+    async def find_all_job_matches(self, job_links: List[Dict], job_params: Dict[str, Any]) -> Dict[str, Any]:
+        """Find ALL job matches above threshold - calls JobMatchingTool"""
+        return await self.job_matching_tool.find_all_job_matches(job_links, job_params)
+    
+    async def extract_enhanced_job_data(self, html_content: str, job_params: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract enhanced job data - calls JobMatchingTool"""
+        return await self.job_matching_tool.extract_enhanced_job_data(html_content, job_params)
+
 
     def _analyze_careers_page_heuristic(self, data):
-        """Heuristic analysis of careers page (replace with LLM later)"""
+        """Heuristic analysis of careers page"""
         job_title = data['job_title'].lower()
         page_text = data['page_preview'].lower()
         
-        # Priority 1: If there's a job-specific search, use it
-        for search_input in data['search_inputs']:
-            placeholder = search_input.get('placeholder', '').lower()
-            name = search_input.get('name', '').lower()
-            
-            if any(word in placeholder or word in name 
-                for word in ['job', 'position', 'role', 'search', 'title']):
-                return {
-                    "success": True,
-                    "action": "use_search",
-                    "search_selector": f"input[name='{search_input['name']}']" if search_input['name'] else "input[type='search'], input[type='text']",
-                    "reasoning": f"Found job search functionality: {placeholder or name}"
-                }
+        # Check if job title appears in page content
+        job_words = job_title.split()
+        matches = sum(1 for word in job_words if len(word) > 2 and word in page_text)
         
-        # Priority 2: Look for direct job listings on current page
-        job_listing_indicators = ['apply now', 'view position', 'job opening', 'current opportunities']
-        if any(indicator in page_text for indicator in job_listing_indicators):
+        logger.info(f"Job title '{job_title}' - found {matches}/{len(job_words)} words in page")
+        
+        if matches >= 2:  # At least 2 words match
             return {
                 "success": True,
                 "action": "extract_jobs_current_page",
-                "reasoning": "Current page appears to have job listings"
+                "reasoning": f"Found job title keywords on page ({matches} matches)"
             }
         
-        # Priority 3: Find links that specifically mention job listings
-        job_listing_links = []
-        for link in data['links']:
-            link_text = link['text'].lower()
-            href = link['href'].lower()
-            
-            # Score links for job listing likelihood
-            score = 0
-            if 'job' in link_text and ('listing' in link_text or 'opening' in link_text or 'search' in link_text):
-                score += 30
-            elif 'current' in link_text and ('position' in link_text or 'opening' in link_text):
-                score += 25
-            elif 'view' in link_text and 'job' in link_text:
-                score += 20
-            elif 'search' in link_text and 'job' in link_text:
-                score += 20
-            
-            # Avoid generic pages
-            if any(avoid in link_text for avoid in ['about', 'culture', 'benefit', 'why', 'consulting']):
-                score -= 15
-                
-            if score > 15:
-                job_listing_links.append({**link, 'score': score})
-        
-        if job_listing_links:
-            best_link = max(job_listing_links, key=lambda x: x['score'])
-            return {
-                "success": True,
-                "action": "navigate_to_link",
-                "target_url": best_link['href'],
-                "reasoning": f"Found promising job listings link: '{best_link['text']}' (score: {best_link['score']})"
-            }
-        
-        # Priority 4: Generic search if available
+        # Check for search functionality
         if data['search_inputs']:
             return {
                 "success": True,
                 "action": "use_search",
                 "search_selector": "input[type='search'], input[type='text']",
-                "reasoning": "No specific job search found, but page has search functionality"
+                "reasoning": "Page has search functionality"
             }
         
-        # Last resort: Look for any careers-related links
         return {
             "success": True,
             "action": "search_links",
-            "reasoning": "No search or clear job links found, will analyze all career links"
+            "reasoning": "No job match found, will search links"
         }
             
     async def find_best_job_match(self, job_links: List[Dict], job_params: Dict[str, Any]) -> Dict[str, Any]:

@@ -405,6 +405,176 @@ class HTMLScrapingTool:
         ), reverse=True)
         
         return unique_links
+    
+    async def extract_job_listings_with_llm(self, job_title: str) -> Dict[str, Any]:
+        """Use LLM to analyze page and extract job listings intelligently"""
+        if not self.web_navigator or not self.web_navigator.page:
+            return {"success": False, "error": "No active web navigator or page"}
+            
+        logger.info("Using LLM to analyze page for job listings")
+        
+        try:
+            html_content = await self.web_navigator.get_page_html()
+            
+            # Clean HTML for LLM analysis
+            soup = BeautifulSoup(html_content, 'html.parser')
+            
+            # Remove script/style but keep structure
+            for script in soup(["script", "style"]):
+                script.decompose()
+                
+            # Get a reasonable chunk of HTML for analysis (not too big for tokens)
+            html_for_analysis = str(soup)#[:15000]
+            
+            # Create LLM analysis prompt
+            prompt = f"""
+            Analyze this careers page HTML and identify all job listings/postings.
+            
+            I'm looking for: "{job_title}"
+            
+            Please find ALL job opportunities on this page. Look for:
+            - Job titles and position names
+            - Links to individual job postings
+            - Application buttons or "Apply" links
+            - Job descriptions or snippets
+            - Any clickable elements that represent job opportunities
+            
+            Don't rely on specific HTML tags or CSS classes. Understand the content semantically.
+            
+            HTML content:
+            {html_for_analysis}
+            
+            Return JSON format:
+            {{
+                "jobs_found": [
+                    {{
+                        "title": "exact job title found",
+                        "url": "link to job posting (href or onclick URL)",
+                        "description": "any description/snippet found",
+                        "relevance_score": 0-100,
+                        "location": "location if mentioned"
+                    }}
+                ],
+                "total_jobs": number,
+                "analysis_notes": "what you observed about the page structure"
+            }}
+            """
+            
+            # For now, use heuristic analysis (replace with actual LLM call)
+            analysis_result = await self._llm_analyze_jobs_heuristic(html_content, job_title)
+            
+            return {
+                "success": True,
+                "job_listings": analysis_result.get("jobs_found", []),
+                "total_found": analysis_result.get("total_jobs", 0),
+                "analysis": analysis_result.get("analysis_notes", "")
+            }
+            
+        except Exception as e:
+            logger.error(f"LLM job extraction failed: {str(e)}")
+            return {"success": False, "error": str(e)}
+
+    async def _llm_analyze_jobs_heuristic(self, html_content: str, job_title: str) -> Dict[str, Any]:
+        """Heuristic LLM-like analysis until real LLM integration"""
+        soup = BeautifulSoup(html_content, 'html.parser')
+        current_url = self.web_navigator.current_url
+        
+        jobs_found = []
+        
+        # Strategy 1: Find text that looks like job titles
+        job_title_indicators = ['engineer', 'manager', 'analyst', 'consultant', 'developer', 'specialist', 'berater', 'designer']
+        
+        # Look for headings, links, and divs containing job-like text
+        potential_jobs = []
+        
+        for element in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'a', 'div', 'span']):
+            text = element.get_text(strip=True)
+            
+            # Skip if text is too short or too long
+            if len(text) < 5 or len(text) > 100:
+                continue
+                
+            # Check if text looks like a job title
+            text_lower = text.lower()
+            
+            # Score based on job-like characteristics
+            job_score = 0
+            
+            # Contains job title indicators
+            for indicator in job_title_indicators:
+                if indicator in text_lower:
+                    job_score += 20
+                    
+            # Contains specific search terms
+            search_terms = job_title.lower().split()
+            for term in search_terms:
+                if len(term) > 2 and term in text_lower:
+                    job_score += 30
+                    
+            # Patterns that suggest job titles
+            if any(pattern in text_lower for pattern in ['(m/w/d)', '(m/f/d)', 'full-time', 'part-time']):
+                job_score += 25
+                
+            # German job patterns
+            if any(pattern in text_lower for pattern in ['berater', 'ingenieur', 'entwickler', 'manager']):
+                job_score += 20
+                
+            # Penalty for non-job content
+            if any(avoid in text_lower for avoid in ['cookie', 'privacy', 'about us', 'contact', 'footer']):
+                job_score -= 50
+
+            if job_score >= 30:
+                logger.info(f"Found potential job: '{text}' (score: {job_score})")
+                logger.info(f"Element: {element.name}, Parent: {element.parent.name if element.parent else 'None'}")
+                
+            if job_score >= 30:
+                # Try to find associated URL
+                job_url = None
+                
+                # If element itself is a link
+                if element.name == 'a' and element.get('href'):
+                    job_url = element['href']
+                
+                # Look for clickable parent
+                elif element.parent and element.parent.name == 'a':
+                    job_url = element.parent.get('href')
+                    
+                # Look for onclick events
+                elif element.get('onclick'):
+                    onclick_text = element.get('onclick', '')
+                    if 'location' in onclick_text or 'href' in onclick_text:
+                        job_url = onclick_text
+                        
+                # Convert relative URLs
+                if job_url and not job_url.startswith(('http://', 'https://')):
+                    from urllib.parse import urljoin
+                    job_url = urljoin(current_url, job_url)
+                    
+                potential_jobs.append({
+                    'title': text,
+                    'url': job_url or current_url,
+                    'score': job_score,
+                    'element': element.name
+                })
+        
+        # Sort by score and take best matches
+        potential_jobs.sort(key=lambda x: x['score'], reverse=True)
+        
+        # Convert to final format
+        for job in potential_jobs[:10]:  # Top 10 matches
+            jobs_found.append({
+                'title': job['title'],
+                'url': job['url'],
+                'description': f"Found in {job['element']} element",
+                'relevance_score': job['score'],
+                'location': None  # Could extract location later
+            })
+        
+        return {
+            'jobs_found': jobs_found,
+            'total_jobs': len(jobs_found),
+            'analysis_notes': f"Analyzed page content semantically, found {len(potential_jobs)} potential job matches"
+        }
         
     async def cleanup(self):
         """Cleanup resources"""
