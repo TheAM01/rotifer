@@ -10,7 +10,7 @@ from utils.logger import setup_logger
 logger = setup_logger(__name__)
 
 class WebNavigationTool:
-    def __init__(self, headless: bool = True, slow_mo: int = 100):
+    def __init__(self, headless: bool = False, slow_mo: int = 100):
         self.playwright = None
         self.browser = None
         self.context = None
@@ -39,6 +39,10 @@ class WebNavigationTool:
             
             self.page = await self.context.new_page()
             self.page.set_default_timeout(30000)
+            await self.page.set_extra_http_headers({
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120 Safari/537.36"
+            })
+
             
             logger.info("Web Navigation Tool initialized successfully")
             
@@ -54,7 +58,8 @@ class WebNavigationTool:
             # Ensure URL has protocol
             if not url.startswith(('http://', 'https://')):
                 url = f"https://{url}"
-                
+            
+            logger.info(f"[MDEBUG] URL: {url}")
             await self.page.goto(url, wait_until='domcontentloaded', timeout=30000)
             self.current_url = self.page.url
             

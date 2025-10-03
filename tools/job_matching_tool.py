@@ -241,79 +241,46 @@ class JobMatchingTool:
             return "very_low"
             
     async def extract_job_data(self, html_content: str, job_params: Dict[str, Any]) -> Dict[str, Any]:
-        """Extract structured job data from HTML - OpenAI Agents SDK compatible"""
-        logger.info("Extracting structured job data")
+        """Use GPT to extract job data from posting"""
+        from openai import AsyncOpenAI
+        
+        client = AsyncOpenAI()
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        for script in soup(["script", "style", "nav", "footer", "header"]):
+            script.decompose()
+            
+        text_content = soup.get_text()[:10000]  # Limit tokens
+        
+        prompt = f"""Extract job information from this job posting:
+
+    Job posting content:
+    {text_content}
+
+    Extract and return JSON:
+    {{"title": "job title", "company": "company name", "location": "location", "employment_type": "full-time/part-time/etc", "salary_range": "salary if mentioned", "requirements": ["list of requirements"], "responsibilities": ["list of responsibilities"], "description": "job summary", "benefits": ["benefits listed"], "experience_level": "entry/mid/senior", "remote_option": "remote/hybrid/onsite", "department": "department/team"}}
+
+    Be thorough and accurate. Set fields to null if not found."""
         
         try:
-            soup = BeautifulSoup(html_content, 'html.parser')
+            response = await client.chat.completions.create(
+                model="gpt-5-nano",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=1
+            )
             
-            # Remove script and style elements
-            for script in soup(["script", "style", "nav", "footer", "header"]):
-                script.decompose()
-                
-            text_content = soup.get_text()
-            
-            # Initialize job data structure
-            job_data = {
-                "title": None,
-                "company": job_params.get("company_name"),
-                "location": None,
-                "employment_type": None,
-                "department": None,
-                "salary_range": None,
-                "requirements": [],
-                "responsibilities": [],
-                "description": None,
-                "benefits": [],
-                "experience_level": None,
-                "remote_option": None,
-                "posted_date": None,
-                "application_deadline": None
-            }
-            
-            # Extract title
-            job_data["title"] = await self._extract_job_title(soup, job_params.get("job_title"))
-            
-            # Extract location
-            job_data["location"] = await self._extract_location(text_content)
-            
-            # Extract employment type
-            job_data["employment_type"] = await self._extract_employment_type(text_content)
-            
-            # Extract salary
-            job_data["salary_range"] = await self._extract_salary(text_content)
-            
-            # Extract remote option
-            job_data["remote_option"] = await self._extract_remote_option(text_content)
-            
-            # Extract experience level
-            job_data["experience_level"] = await self._extract_experience_level(text_content)
-            
-            # Extract requirements and responsibilities
-            job_data["requirements"] = await self._extract_requirements(text_content)
-            job_data["responsibilities"] = await self._extract_responsibilities(text_content)
-            
-            # Extract benefits
-            job_data["benefits"] = await self._extract_benefits(text_content)
-            
-            # Create description from first few sentences
-            sentences = [s.strip() for s in text_content.split('.') if len(s.strip()) > 20][:5]
-            job_data["description"] = '. '.join(sentences) + '.' if sentences else None
+            import json
+            job_data = json.loads(response.choices[0].message.content)
             
             return {
                 "success": True,
                 "job_data": job_data,
-                "extracted_text_length": len(text_content),
-                "status": "job_data_extracted"
+                "extraction_method": "gpt_powered"
             }
             
         except Exception as e:
-            logger.error(f"Job data extraction failed: {str(e)}")
-            return {
-                "success": False,
-                "error": str(e),
-                "status": "job_data_extraction_failed"
-            }
+            logger.error(f"GPT job data extraction failed: {str(e)}")
+            return {"success": False, "error": str(e)}
             
     async def _extract_job_title(self, soup, expected_title: str) -> str:
         """Extract job title from soup"""

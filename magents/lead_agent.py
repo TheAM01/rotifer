@@ -52,7 +52,7 @@ class LeadAgent(Agent):
             
             Always maintain context and coordinate the full workflow to completion.
             """,
-            model="gpt-4o-mini",  # Use gpt-4o-mini as it's more available
+            model="gpt-5-nano",  # Use gpt-5-nano as it's more available
             tools=[coordinate_company_search, coordinate_navigation, coordinate_page_analysis]
         )
         
@@ -208,12 +208,13 @@ class LeadAgent(Agent):
         )
         
         logger.info(f"LLM Decision: {decision['reasoning']}")
-        
         action = decision.get("action", "search_links")
         
         if action == "use_search":
             # Use search functionality
+            logger.info(f"[MDEBUG] IT SHOULD SEARCH")
             search_result = await self.web_agent.search_jobs_on_page(job_params["job_title"])
+            logger.info(f"[MDEBUG] Search Result: {search_result}")
             return search_result.get("current_url", self.web_nav_tool.current_url)
             
         elif action == "navigate_to_link":
@@ -235,6 +236,17 @@ class LeadAgent(Agent):
             
     async def _find_and_scrape_all_jobs(self, job_listings_url: str, job_params: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Find and scrape ALL matching job postings"""
+
+        scraped_jobs = []
+        visited_urls = set()  # Track visited pages
+        
+        # Get current page content
+        current_url = self.web_nav_tool.current_url
+        if current_url in visited_urls:
+            logger.warning(f"Already scraped {current_url}, skipping")
+            return scraped_jobs
+            
+        visited_urls.add(current_url)
         
         # Get current page content
         page_content = await self.web_agent.scrape_current_page()
@@ -264,6 +276,14 @@ class LeadAgent(Agent):
         
         for i, job_match in enumerate(all_matches["matches"]):
             try:
+                job_url = job_match["url"]
+                
+                # Skip if already scraped this job URL
+                if job_url in visited_urls:
+                    logger.info(f"Already scraped {job_url}, skipping")
+                    continue
+                    
+                visited_urls.add(job_url)
                 logger.info(f"Scraping job {i+1}/{len(all_matches['matches'])}: {job_match['title']}")
                 
                 # Navigate to job posting

@@ -50,10 +50,10 @@ class SearchTool:
         
         try:
             search_queries = [
-                f"{company_name} official website",
-                f"{company_name} company homepage", 
-                f"{company_name} corporate site",
-                f"{company_name} .com",
+                # f"{company_name} official website",
+                # f"{company_name} company homepage", 
+                # f"{company_name} corporate site",
+                f"{company_name} jobs",
                 company_name
             ]
             
@@ -80,6 +80,9 @@ class SearchTool:
                 confidence_level = self._confidence_level(best_confidence)
                 
                 logger.info(f"Found company website: {best_result['url']} (confidence: {confidence_level})")
+
+                parsed_url = urlparse(best_result["url"])
+                root_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
                 
                 return {
                     "success": True,

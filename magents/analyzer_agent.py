@@ -83,7 +83,7 @@ class AnalyzerAgent(Agent):
             Always provide detailed reasoning for your analysis and decisions.
             Use fuzzy matching scores to rank job matches by relevance.
             """,
-            model="gpt-4o-mini",
+            model="gpt-5-nano",
             tools=[
                 analyze_html_structure_tool,
                 find_careers_links_tool,
@@ -190,12 +190,28 @@ class AnalyzerAgent(Agent):
             
             # Find all links with their context
             links = []
-            for link in soup.find_all('a', href=True)[:20]:  # Limit to first 20
+            for link in soup.find_all('a', href=True):
+                text = link.get_text(strip=True)
+                href = link['href']
+                
+                # Skip useless links
+                if any(skip in href.lower() for skip in ['datenschutz', 'privacy', 'cookie', 'impressum', 'mailto:', 'tel:']):
+                    continue
+                if any(skip in text.lower() for skip in ['datenschutz', 'privacy', 'cookie', 'impressum']):
+                    continue
+                if len(text) < 3:  # Skip very short link texts
+                    continue
+                    
                 links.append({
-                    'text': link.get_text(strip=True),
-                    'href': link['href'],
+                    'text': text,
+                    'href': href,
                     'context': str(link.parent)[:100] if link.parent else ''
                 })
+            
+            logger.info(f"Found {len(links)} links on careers page:")
+            with open("links.txt", "w", encoding="utf-8") as f:
+                for link in links:
+                    f.write(f"{link['text']} -> {link['href']}\n")
             
             # Create analysis prompt
             analysis_data = {
@@ -207,14 +223,14 @@ class AnalyzerAgent(Agent):
             }
             
             # Use heuristic analysis (replace with actual LLM call later)
-            decision = self._analyze_careers_page_heuristic(analysis_data)
+            decision = await self._analyze_careers_page_heuristic(analysis_data)
             
             return decision
             
         except Exception as e:
             logger.error(f"Careers page analysis failed: {str(e)}")
             return {
-                "success": False,
+            "success": False,
                 "action": "search_links",
                 "reasoning": "Analysis failed, defaulting to link search"
             }
@@ -228,38 +244,53 @@ class AnalyzerAgent(Agent):
         return await self.job_matching_tool.extract_enhanced_job_data(html_content, job_params)
 
 
-    def _analyze_careers_page_heuristic(self, data):
-        """Heuristic analysis of careers page"""
-        job_title = data['job_title'].lower()
-        page_text = data['page_preview'].lower()
+    async def _analyze_careers_page_heuristic(self, data):
+        """Use GPT to analyze careers page and decide action"""
+        from openai import AsyncOpenAI
         
-        # Check if job title appears in page content
-        job_words = job_title.split()
-        matches = sum(1 for word in job_words if len(word) > 2 and word in page_text)
+        client = AsyncOpenAI()
         
-        logger.info(f"Job title '{job_title}' - found {matches}/{len(job_words)} words in page")
+        job_title = data['job_title']
+        page_preview = data['page_preview']
+        links = data['links']
+        search_inputs = data['search_inputs']
         
-        if matches >= 2:  # At least 2 words match
-            return {
-                "success": True,
-                "action": "extract_jobs_current_page",
-                "reasoning": f"Found job title keywords on page ({matches} matches)"
-            }
+        links_text = "\n".join([f"- '{link['text']}' -> {link['href']}" for link in links[:20]])
+        search_text = "\n".join([f"- {inp.get('placeholder', inp.get('name', 'search input'))}" for inp in search_inputs]) if search_inputs else "No search inputs"
+        logger.info(f"\n{search_text}\n")
+        prompt = f"""Analyze this careers page and determine the best action to find job listings for: "{job_title}"
+
+        Page content preview: {page_preview[:3000]}
+
+        Available links on page:
+        {links_text}
+
+        Available search inputs:
+        {search_text}
+
+        Choose the BEST action:
+        1. "navigate_to_link" - if you see a link to view all jobs/positions
+        2. "use_search" - if there's search functionality 
+        3. "extract_jobs_current_page" - if this page shows job listings
+        4. "search_links" - fallback option
+
+        Return JSON only:
+        {{"action": "action_name", "target_url": "url_if_navigate", "search_selector": "selector_if_search", "reasoning": "explanation"}}"""
         
-        # Check for search functionality
-        if data['search_inputs']:
-            return {
-                "success": True,
-                "action": "use_search",
-                "search_selector": "input[type='search'], input[type='text']",
-                "reasoning": "Page has search functionality"
-            }
-        
-        return {
-            "success": True,
-            "action": "search_links",
-            "reasoning": "No job match found, will search links"
-        }
+        try:
+            response = await client.chat.completions.create(
+                model="gpt-5-nano",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=1
+            )
+            
+            import json
+            result = json.loads(response.choices[0].message.content)
+            return result
+            
+        except Exception as e:
+            logger.error(f"GPT analysis failed: {str(e)}")
+            return {"action": "search_links", "reasoning": "GPT analysis failed"}
             
     async def find_best_job_match(self, job_links: List[Dict], job_params: Dict[str, Any]) -> Dict[str, Any]:
         """Find best job match using fuzzy matching"""

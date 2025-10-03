@@ -275,25 +275,43 @@ class HTMLScrapingTool:
         soup = BeautifulSoup(html_content, 'html.parser')
         links = []
         
-        for link in soup.find_all('a', href=True):
-            href = link['href']
-            text = link.get_text(strip=True)
-            
-            # Convert relative URLs to absolute
-            if href.startswith('/') or not href.startswith(('http://', 'https://')):
-                href = urljoin(base_url, href)
-                
-            # Skip invalid links
-            if not href or href == '#' or href.startswith(('javascript:', 'mailto:', 'tel:')):
-                continue
-                
-            links.append({
-                'url': href,
-                'text': text,
-                'original_href': link['href'],
-                'title': link.get('title', ''),
-                'class': link.get('class', [])
-            })
+        for tag in soup.find_all(['a', 'button']):
+            text = tag.get_text(strip=True)
+
+            if tag.name == "a" and tag.has_attr("href"):
+                href = tag['href']
+
+                # Convert relative URLs to absolute
+                if href.startswith('/') or not href.startswith(('http://', 'https://')):
+                    href = urljoin(base_url, href)
+
+                # Skip invalid links
+                if not href or href == '#' or href.startswith(('javascript:', 'mailto:', 'tel:')):
+                    continue
+
+                links.append({
+                    'type': 'a',
+                    'url': href,
+                    'text': text,
+                    'original_href': tag['href'],
+                    'title': tag.get('title', ''),
+                    'class': tag.get('class', [])
+                })
+
+            elif tag.name == "button":
+                # Buttons don’t usually have href — check for possible navigation attributes
+                href = tag.get('onclick') or tag.get('data-href') or None
+
+                links.append({
+                    'type': 'button',
+                    'url': href,
+                    'text': text,
+                    'original_href': href,
+                    'title': tag.get('title', ''),
+                    'class': tag.get('class', [])
+                })
+
+
             
         return links
         
@@ -475,106 +493,62 @@ class HTMLScrapingTool:
             return {"success": False, "error": str(e)}
 
     async def _llm_analyze_jobs_heuristic(self, html_content: str, job_title: str) -> Dict[str, Any]:
-        """Heuristic LLM-like analysis until real LLM integration"""
+        """Use GPT to find job listings in HTML"""
+        from openai import AsyncOpenAI
+        import os
+        client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         soup = BeautifulSoup(html_content, 'html.parser')
-        current_url = self.web_navigator.current_url
         
-        jobs_found = []
+        # Remove scripts/styles but keep structure
+        for script in soup(["script", "style"]):
+            script.decompose()
         
-        # Strategy 1: Find text that looks like job titles
-        job_title_indicators = ['engineer', 'manager', 'analyst', 'consultant', 'developer', 'specialist', 'berater', 'designer']
+        # Get text content and some HTML structure
+        text_content = soup.get_text()  # Limit for tokens
         
-        # Look for headings, links, and divs containing job-like text
-        potential_jobs = []
-        
-        for element in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'a', 'div', 'span']):
-            text = element.get_text(strip=True)
-            
-            # Skip if text is too short or too long
-            if len(text) < 5 or len(text) > 100:
-                continue
-                
-            # Check if text looks like a job title
-            text_lower = text.lower()
-            
-            # Score based on job-like characteristics
-            job_score = 0
-            
-            # Contains job title indicators
-            for indicator in job_title_indicators:
-                if indicator in text_lower:
-                    job_score += 20
-                    
-            # Contains specific search terms
-            search_terms = job_title.lower().split()
-            for term in search_terms:
-                if len(term) > 2 and term in text_lower:
-                    job_score += 30
-                    
-            # Patterns that suggest job titles
-            if any(pattern in text_lower for pattern in ['(m/w/d)', '(m/f/d)', 'full-time', 'part-time']):
-                job_score += 25
-                
-            # German job patterns
-            if any(pattern in text_lower for pattern in ['berater', 'ingenieur', 'entwickler', 'manager']):
-                job_score += 20
-                
-            # Penalty for non-job content
-            if any(avoid in text_lower for avoid in ['cookie', 'privacy', 'about us', 'contact', 'footer']):
-                job_score -= 50
+        # Extract all links for GPT analysis
+        all_links = []
+        for link in soup.find_all('a', href=True):
+            text = link.get_text(strip=True)
+            if text and len(text) > 2:
+                all_links.append(f"'{text}' -> {link['href']}")
 
-            if job_score >= 30:
-                logger.info(f"Found potential job: '{text}' (score: {job_score})")
-                logger.info(f"Element: {element.name}, Parent: {element.parent.name if element.parent else 'None'}")
-                
-            if job_score >= 30:
-                # Try to find associated URL
-                job_url = None
-                
-                # If element itself is a link
-                if element.name == 'a' and element.get('href'):
-                    job_url = element['href']
-                
-                # Look for clickable parent
-                elif element.parent and element.parent.name == 'a':
-                    job_url = element.parent.get('href')
-                    
-                # Look for onclick events
-                elif element.get('onclick'):
-                    onclick_text = element.get('onclick', '')
-                    if 'location' in onclick_text or 'href' in onclick_text:
-                        job_url = onclick_text
-                        
-                # Convert relative URLs
-                if job_url and not job_url.startswith(('http://', 'https://')):
-                    from urllib.parse import urljoin
-                    job_url = urljoin(current_url, job_url)
-                    
-                potential_jobs.append({
-                    'title': text,
-                    'url': job_url or current_url,
-                    'score': job_score,
-                    'element': element.name
-                })
-        
-        # Sort by score and take best matches
-        potential_jobs.sort(key=lambda x: x['score'], reverse=True)
-        
-        # Convert to final format
-        for job in potential_jobs[:10]:  # Top 10 matches
-            jobs_found.append({
-                'title': job['title'],
-                'url': job['url'],
-                'description': f"Found in {job['element']} element",
-                'relevance_score': job['score'],
-                'location': None  # Could extract location later
+        for btn in soup.find_all('button'):
+            all_links.append({
+                "text": btn.get_text(strip=True),
+                # Some buttons have onclick JS instead of href
+                "href": btn.get('onclick') or None
             })
         
-        return {
-            'jobs_found': jobs_found,
-            'total_jobs': len(jobs_found),
-            'analysis_notes': f"Analyzed page content semantically, found {len(potential_jobs)} potential job matches"
-        }
+        links_text = "\n".join(all_links)  # Limit links
+        
+        prompt = f"""Analyze this page content and find job listings/postings for: "{job_title}"
+
+        Page text content:
+        {text_content}
+
+        All links on page:
+        {links_text}
+
+        Find job opportunities and return them as JSON:
+        {{"jobs_found": [{{"title": "job title", "url": "job url", "relevance_score": 0-100, "description": "brief description"}}], "total_jobs": number, "analysis_notes": "what you found"}}
+
+        Look for actual job postings, not just career information pages."""
+        
+        try:
+            response = await client.chat.completions.create(
+                model="gpt-5-nano",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=1
+            )
+            
+            import json
+            result = json.loads(response.choices[0].message.content)
+            return result
+            
+        except Exception as e:
+            logger.error(f"GPT job extraction failed: {str(e)}")
+            return {"jobs_found": [], "total_jobs": 0, "analysis_notes": f"Error: {str(e)}"}
         
     async def cleanup(self):
         """Cleanup resources"""

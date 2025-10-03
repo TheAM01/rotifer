@@ -15,6 +15,7 @@ from agents import Agent
 from magents.lead_agent import LeadAgent
 from utils.logger import setup_logger
 
+
 # Load environment variables
 load_dotenv()
 
@@ -135,4 +136,9 @@ async def main():
         await scraper_system.cleanup()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except RuntimeError as e:
+        # Ignore "Event loop is closed" noise on Windows shutdown
+        if "Event loop is closed" not in str(e):
+            raise

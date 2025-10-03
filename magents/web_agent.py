@@ -67,7 +67,7 @@ class WebAgent(Agent):
             Always ensure pages are fully loaded before scraping content.
             Handle errors gracefully and provide detailed feedback about navigation results.
             """,
-            model="gpt-4o-mini",
+            model="gpt-5-nano",
             tools=[
                 navigate_to_url_tool,
                 scrape_page_content_tool,
@@ -155,62 +155,50 @@ class WebAgent(Agent):
             return {"success": False, "error": str(e)}
             
     async def search_jobs_on_page(self, job_title: str) -> Dict[str, Any]:
-        """Search for jobs using the page's search functionality"""
-        logger.info(f"Web Agent searching for jobs on page: {job_title}")
+        """Use GPT to find and use search functionality"""
+        from openai import AsyncOpenAI
         
         try:
-            # First, find search forms and inputs
-            forms_result = await self.scraping_tool.extract_forms()
+            # Get page HTML
+            page_content = await self.scraping_tool.scrape_page()
+            html_content = page_content["html_content"]
             
-            if not forms_result.get("success") or not forms_result.get("forms"):
-                return {"success": False, "error": "No search forms found on page"}
+            client = AsyncOpenAI()
+            
+            prompt = f"""Analyze this HTML and find the best way to search for jobs: "{job_title}"
+
+
+            Find search inputs and return JSON:
+            {{"search_found": true/false, "input_selector": "the exact css selector for input", "submit_method": "click_button|press_enter", "submit_selector": "selector for submit button if needed", "reasoning": "explanation"}}
+            HTML content: {html_content}
+            """
+            
+            response = await client.chat.completions.create(
+                model="gpt-5-nano",
+                messages=[{"role": "user", "content": prompt[:200000]}],
+                temperature=1
+            )
+            
+            import json
+            search_info = json.loads(response.choices[0].message.content)
+            logger.info(f"[MDEBUG] Search inf: {search_info}")
+            if search_info.get("search_found"):
+                # Use GPT-provided selector
+                selector = search_info["input_selector"]
+                fill_result = await self.web_nav_tool.interact_with_element("fill", selector, job_title)
                 
-            # Find the most likely job search form/input
-            search_input = None
-            for form in forms_result["forms"]:
-                for input_field in form["inputs"]:
-                    if input_field["type"] in ["text", "search"]:
-                        name = input_field.get("name", "").lower()
-                        placeholder = input_field.get("placeholder", "").lower()
+                if fill_result.get("success"):
+                    if search_info["submit_method"] == "click_button":
+                        submit_result = await self.web_nav_tool.interact_with_element("click", search_info["submit_selector"])
+                    else:
+                        submit_result = await self.web_nav_tool.interact_with_element("submit", selector)
                         
-                        if any(keyword in name or keyword in placeholder 
-                              for keyword in ["search", "job", "title", "keyword", "query"]):
-                            search_input = input_field
-                            break
-                            
-                if search_input:
-                    break
-                    
-            if not search_input:
-                return {"success": False, "error": "No suitable search input found"}
-                
-            # Construct selector for the input
-            if search_input.get("id"):
-                selector = f"#{search_input['id']}"
-            elif search_input.get("name"):
-                selector = f"input[name='{search_input['name']}']"
-            else:
-                selector = "input[type='search'], input[type='text']"
-                
-            # Fill and submit the search
-            fill_result = await self.web_nav_tool.interact_with_element("fill", selector, job_title)
-            
-            if fill_result.get("success"):
-                submit_result = await self.web_nav_tool.interact_with_element("submit", selector)
-                
-                if submit_result.get("success"):
-                    # Wait for search results
                     await asyncio.sleep(3)
-                    return {
-                        "success": True,
-                        "current_url": submit_result.get("current_url"),
-                        "message": f"Successfully searched for '{job_title}'"
-                    }
-                    
-            return {"success": False, "error": "Failed to submit search"}
+                    return {"success": True, "current_url": self.web_nav_tool.current_url}
+            
+            return {"success": False, "error": "GPT couldn't find search functionality"}
             
         except Exception as e:
-            logger.error(f"Job search failed: {str(e)}")
             return {"success": False, "error": str(e)}
             
     async def handle_iframe_content(self) -> Dict[str, Any]:
