@@ -53,7 +53,7 @@ class SearchTool:
                 # f"{company_name} official website",
                 # f"{company_name} company homepage", 
                 # f"{company_name} corporate site",
-                f"{company_name} jobs",
+                f"{company_name}",
                 company_name
             ]
             
