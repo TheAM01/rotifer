@@ -433,7 +433,7 @@ class HTMLScrapingTool:
         
         try:
             html_content = await self.web_navigator.get_page_html()
-            
+            print("YES HTMNL CONTENT")
             # Clean HTML for LLM analysis
             soup = BeautifulSoup(html_content, 'html.parser')
             
@@ -442,7 +442,7 @@ class HTMLScrapingTool:
                 script.decompose()
                 
             # Get a reasonable chunk of HTML for analysis (not too big for tokens)
-            html_for_analysis = str(soup)#[:15000]
+            html_for_analysis = str(soup)[:25000]
             
             # Create LLM analysis prompt
             prompt = f"""
@@ -479,6 +479,8 @@ class HTMLScrapingTool:
             """
             
             # For now, use heuristic analysis (replace with actual LLM call)
+            print(html_content[:100])
+            print(job_title)
             analysis_result = await self._llm_analyze_jobs_heuristic(html_content, job_title)
             
             return {
@@ -520,7 +522,11 @@ class HTMLScrapingTool:
                 "href": btn.get('onclick') or None
             })
         
-        links_text = "\n".join(all_links)  # Limit links
+        links_text = "\n".join(
+            f"'{link.get('text', '')}' -> {link.get('href', '')}" if isinstance(link, dict) else link
+            for link in all_links
+        )
+
         
         prompt = f"""Analyze this page content and find job listings/postings for: "{job_title}"
 

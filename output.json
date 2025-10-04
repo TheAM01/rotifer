@@ -1,11 +1,544 @@
 {
-  "success": false,
-  "error": "No job listings found on the page",
+  "success": true,
   "job_params": {
     "job_title": "consultor sap fi",
     "company_name": "ntt data",
     "company_domain": null,
     "location": null
   },
-  "timestamp": 15966.3524928
+  "workflow_steps": {
+    "company_url": "https://www.nttdata.com/global/en/",
+    "careers_url": "https://careers.services.global.ntt/global/en",
+    "job_listings_url": "https://careers.services.global.ntt/global/en/search-results?keywords=consultor%20sap%20fi"
+  },
+  "jobs_found": 8,
+  "all_job_data": [
+    {
+      "title": "Consultor SAP FI",
+      "company": "NTT Data",
+      "location": "Lima, Peru",
+      "employment_type": "full-time",
+      "salary_range": null,
+      "requirements": [
+        "Profesional egresado(a), bachiller o titulado de carrera técnica o universitaria en Ingeniería de Computación, Sistemas, Software, Informática o afines",
+        "Experiencia mínima de 3 años como consultor SAP en cualquiera de los módulos: FI",
+        "Experiencia con SAP S4HANA",
+        "Experiencia comprobada en soporte e implementación de SAP"
+      ],
+      "responsibilities": null,
+      "description": "En NTT Data te brindamos una excelente oportunidad para seguir creciendo y desarrollándote como profesional, por ello estamos en búsqueda de nuevos perfiles orientados a SAP con experiencia en cualquiera de los siguientes módulos: SAP FI.",
+      "benefits": [
+        "Contrato indefinido desde el primer día de labores",
+        "Inmejorable oportunidad de línea de carrera profesional en nuestra consultora líder en el mercado TI, permanente capacitación y formación profesional",
+        "EPS y seguro oncológico cubierto al 100%",
+        "Tarjeta de alimentación",
+        "Oportunidad de trabajar en proyectos de clientes de gran envergadura locales e internacionales"
+      ],
+      "experience_level": "mid",
+      "remote_option": "onsite",
+      "department": "Enterprise Solutions",
+      "location_details": {
+        "basic_location": "Lima, Peru"
+      },
+      "summary": [
+        "Consultor SAP FI job in Lima, Peru | Enterprise Solutions jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsultor SAP FI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocation\n\n Lima, Peru\n        \n\n\n\n\n\n\n\nCategory\n\n Enterprise Solutions\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\nEn NTT Data te brindamos una excelente oportunidad para seguir creciendo y desarrollándote como profesional, por ello estamos en búsqueda de nuevos perfiles orientados a SAP con experiencia en cualquiera de los siguientes módulos: SAP FI\nBeneficios- Contrato indefinido desde el primer día de labores",
+        "- Inmejorable oportunidad de línea de carrera profesional en nuestra consultora líder en el mercado TI, permanente capacitación y formación profesional"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {},
+      "match_score": 115.0,
+      "job_url": "https://careers.services.global.ntt/global/en/job/1e01da45536e540/Consultor-SAP-FI",
+      "scrape_order": 1
+    },
+    {
+      "title": "Consultor SAP FI",
+      "company": "NTT DATA",
+      "location": "Buenos Aires, Argentina",
+      "employment_type": null,
+      "salary_range": null,
+      "requirements": [
+        "Poseer sólidos conocimientos y sólida experiencia de 4 años mínimo en proyectos de implementación y/o mantenimiento correctivo y evolutivo de SAP de escala media/grande en el módulo SAP FI",
+        "Tener experiencia en customizing (avisos, órdenes, planes, hojas de ruta, etc)",
+        "Conocimiento en UI5/HTML (Ideal)",
+        "Conocer los puntos de integración con otros módulos de SAP (Ideal)",
+        "Formación o certificación (preferentemente) de SAP",
+        "Complementa al perfil: habilidades interpersonales, de resolución de incidentes y muy buena comunicación"
+      ],
+      "responsibilities": null,
+      "description": "NTT DATA busca Consultor SAP FI para sumarse al equipo en Buenos Aires. Requisitos mínimos: 4 años de experiencia en SAP FI en proyectos de implementación y/o mantenimiento correctivo y evolutivo; experiencia en customizing; UI5/HTML (ideal); integración con otros módulos SAP (ideal). Se valoran certificaciones SAP y habilidades interpersonales y de resolución de incidentes. Ofrecen plan de desarrollo profesional, cobertura médica para el empleado y familia, reintegro de gastos de home office, descuentos, horarios flexibles y plataforma para estudiar inglés.",
+      "benefits": [
+        "Amplio plan de desarrollo y posibilidades de evolución profesional",
+        "Cobertura médica de primer nivel para vos y tu grupo familiar",
+        "Reintegro de gastos de home office",
+        "Campañas con descuentos en Gastronomía y Supermercados",
+        "Beneficios asociados a la calidad de vida: horarios flex, homeoffice",
+        "Descuentos educacionales",
+        "Plataforma digital bonificada para estudiar inglés"
+      ],
+      "experience_level": "mid",
+      "remote_option": "remote",
+      "department": "SAP Consulting",
+      "location_details": {
+        "basic_location": "Buenos Aires, Argentina",
+        "city_state": "habilidades interpersonales",
+        "on_site": "office"
+      },
+      "summary": [
+        "Consultor SAP FI job in Buenos Aires, Argentina | Other jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsultor SAP FI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                This job is available in 3 locations\n            \n\n                    See all\n                \n\n\n\n\n\n\n\n\n\n\n\n                This job is associated with 2 categories\n            \n\n                    See all\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n💙 Con +190",
+        "000 Digital Lovers en 50 países, ayudamos a alcanzar el éxito transformando el futuro de la tecnología"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {},
+      "match_score": 115.0,
+      "job_url": "https://careers.services.global.ntt/global/en/job/f241eb58c75b000/Consultor-SAP-FI",
+      "scrape_order": 2
+    },
+    {
+      "title": "Consultor/a SAP FI/CO",
+      "company": "NTT DATA Business Solutions Spain",
+      "location": "Barcelona, Spain",
+      "employment_type": "Full-time (indefinite contract)",
+      "salary_range": null,
+      "requirements": [
+        "Titulación universitaria",
+        "Experiencia de al menos 6 años en SAP Finanzas y Controlling en proyectos de implantación, rollout, integración y en mantenimiento",
+        "Conocimiento experto en módulos de SAP FI/CO",
+        "Iniciativa y responsabilidad en la implantación y ejecución de proyectos",
+        "Acostumbrado a trabajar en equipo",
+        "Buen nivel de inglés",
+        "Experiencia en desarrollo ABAP y/o conocimientos de otros módulos del área SAP",
+        "Habilidades de gestión de proyectos",
+        "Disponibilidad para viajar"
+      ],
+      "responsibilities": [
+        "Participación en proyectos de implantaciones, rollouts, migración y mejoras de procesos de SAP y S/4HANA",
+        "Toma de requerimientos, análisis y configuración del sistema",
+        "Formar y apoyar a usuarios finales para la gestión del cambio",
+        "Elaboración de diseños funcionales para desarrollos e integraciones",
+        "Analizar los procesos y requerimientos de la empresa",
+        "Proponer soluciones para optimizar procesos"
+      ],
+      "description": "En NTT DATA Business Solutions Spain estamos buscando un/a Consultor/a SAP FI/CO para ampliar la plantilla del equipo de consultoría SAP. Formarías parte de una empresa que opera en más de 33 países y con más de 11.500 expertos en el sector de la transformación digital. ¡No te lo dejes escapar! Trabajarías en un horario flexible de lunes a viernes con posibilidad de teletrabajo híbrido.",
+      "benefits": [
+        "Profesionales expertos de la tecnología",
+        "Proyectos de desarrollo e implantación, de ámbito nacional e internacional de SAP y S/4HANA",
+        "Retos personales y profesionales en el sector de la consultoría SAP, combinando con nuevas tecnologías de implantación en SAP y S/4HANA y con metodologías ágiles",
+        "Formación continua",
+        "Plan de carrera",
+        "Contrato laboral indefinido",
+        "Salario competitivo e incentivos",
+        "Beneficios sociales: Tickets Restaurante y Seguro Médico",
+        "Flexibilidad de la jornada laboral",
+        "Ambiente motivante y dinámico"
+      ],
+      "experience_level": "Senior",
+      "remote_option": "Hybrid (teletrabajo)",
+      "department": "SAP FI/CO Consulting",
+      "location_details": {
+        "basic_location": "Barcelona, Spain",
+        "city_state": "encaja con tu perfil",
+        "remote_hybrid": "flexible"
+      },
+      "summary": [
+        "Consultor/a SAP FI/CO job in Barcelona, Spain | Other jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsultor/a SAP FI/CO\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocation\n\n Barcelona, Spain\n        \n\n\n\n\n\n\n\nCategory\n\n Other\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n\nEn NTT DATA Business Solutions Spain estamos buscando un/a Consultor/a SAP FI/CO para ampliar la plantilla del equipo de consultoría SAP",
+        "Formarías parte de una empresa que opera en más de 33 países y con más de 11"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "uerimientos"
+      },
+      "match_score": 102.8,
+      "job_url": "https://careers.services.global.ntt/global/en/job/197673b13c59520/Consultor-a-SAP-FI-CO",
+      "scrape_order": 3
+    },
+    {
+      "title": "Consultor/a SAP SR FI-AA",
+      "company": "NTT Data",
+      "location": "Buenos Aires, Argentina",
+      "employment_type": null,
+      "salary_range": null,
+      "requirements": [
+        "Contar con sólida experiencia en contabilidad y gestión de activos fijos incluyendo implementaciones o migraciones de S4/HANA",
+        "Tener profundo conocimiento de las normas NIIF US GAAP y otras normas contables relacionadas",
+        "Amplia experiencia en proceso de ajuste por inflación de activos fijos y en la gestión de activos fijos en entornos de fabricación, incluyendo las complejidades de la gestión de activos en múltiples plantas de producción",
+        "Capacidad para gestionar proyectos complejos y buenas habilidades de comunicación"
+      ],
+      "responsibilities": [
+        "Diseñar, implementar y configurar SAP Activos Fijos (FI-AA) con entendimiento de las regulaciones y prácticas contables locales",
+        "Dar soporte a las actividades de migración a SAP S/4HANA",
+        "Realizar las resoluciones de incidentes, capacitación a usuarios finales y crear documentación del sistema"
+      ],
+      "description": "NTT DATA busca un/a Consultor/a SAP SR FI-AA para sumarse a nuestro equipo. Diseñar, implementar y configurar SAP FI-AA con entendimiento de las regulaciones y prácticas contables locales. Dar soporte a las actividades de migración a SAP S/4HANA. Realizar las resoluciones de incidentes, capacitación a usuarios finales y crear documentación del sistema.",
+      "benefits": [
+        "Amplio plan de desarrollo y posibilidades de evolución profesional",
+        "Cobertura médica de primer nivel para vos y tu grupo familiar",
+        "Reintegro de gastos de home office",
+        "Campañas con importantes descuentos en Gastronomía y Supermercados",
+        "Beneficios asociados a la calidad de vida: horarios flex, homeoffice",
+        "Wellhub (red de gimnasios y bienestar integral)",
+        "Descuentos educacionales",
+        "Plataforma digital bonificada para estudiar inglés"
+      ],
+      "experience_level": "senior",
+      "remote_option": "hybrid",
+      "department": "Enterprise Solutions",
+      "location_details": {
+        "basic_location": "Buenos Aires, Argentina",
+        "on_site": "office"
+      },
+      "summary": [
+        "Consultor/a SAP SR FI-AA job in Buenos Aires, Argentina | Enterprise Solutions jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsultor/a SAP SR FI-AA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                This job is available in 3 locations\n            \n\n                    See all\n                \n\n\n\n\n\n\n\n\n\n\nCategory\n\n Enterprise Solutions\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n💙 Con +190",
+        "000 Digital Lovers en 50 países, ayudamos a alcanzar el éxito transformando el futuro de la tecnología"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [],
+      "preferred_qualifications": [],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {},
+      "match_score": 96.8,
+      "job_url": "https://careers.services.global.ntt/global/en/job/2a24bd94aff6a00/Consultor-a-SAP-SR-FI-AA",
+      "scrape_order": 4
+    },
+    {
+      "title": "SAP FICO Consultant",
+      "company": "NTT DATA Business Solutions",
+      "location": "Hyderabad, India",
+      "employment_type": "Full-Time",
+      "salary_range": null,
+      "requirements": [
+        "Bachelor’s degree in Finance, Accounting, Information Technology, or a related field.",
+        "Minimum 8+ years of experience in SAP FICO implementation and support.",
+        "Extensive knowledge of SAP FI (General Ledger, Accounts Payable, Accounts Receivable, Asset Accounting) and CO (Cost Center Accounting, Profit Center Accounting, Internal Orders, Product Costing) on both S/4 HANA and ECC platforms.",
+        "Proven experience in SAP S/4 HANA and Fiori.",
+        "Strong understanding of financial and management accounting principles.",
+        "Excellent problem-solving and analytical skills.",
+        "Strong project management and leadership skills.",
+        "Effective communication and interpersonal skills.",
+        "Ability to work independently and as part of a team.",
+        "SAP certification in FI/CO is a plus."
+      ],
+      "responsibilities": [
+        "Lead and manage greenfield S/4HANA implementation projects from inception to completion.",
+        "Design and configure SAP FICO modules for both S/4 HANA and ECC platforms.",
+        "Have worked at least in 2 E2E implementations.",
+        "Be able to articulate well with the customers.",
+        "Cloud experience is additional advantage.",
+        "Conduct requirement gathering sessions and workshops with clients.",
+        "Develop functional specifications for custom developments and enhancements.",
+        "Perform system testing, integration testing, and support user acceptance testing (UAT).",
+        "Facilitate data migration and system integration activities.",
+        "Analyze and optimize business processes within the SAP FICO framework.",
+        "Collaborate with other SAP modules and IT teams to ensure seamless integration and data consistency.",
+        "Create and maintain detailed documentation for system configurations, processes, and user guides.",
+        "Conduct training sessions and workshops for end-users and junior consultants.",
+        "Ensure knowledge transfer to client teams and internal stakeholders.",
+        "Lead and manage SAP FICO projects from inception to completion.",
+        "Develop project plans, timelines, and resource allocations.",
+        "Coordinate with clients, stakeholders, and project teams to ensure successful project delivery.",
+        "Stay updated with the latest SAP FICO developments, best practices, and industry trends.",
+        "Identify opportunities for system enhancements and process improvements.",
+        "Participate in SAP user groups and forums to share knowledge and learn from peers."
+      ],
+      "description": "About the Role: As an SAP FICO Consultant L4 to join our dynamic team, the ideal candidate will have a strong background in SAP Financial Accounting (FI) with extensive experience in greenfield S/4HANA implementations. You will play a critical role in the implementation, configuration, and support of SAP Financial Accounting (FI) and Controlling (CO) modules on both S/4 HANA and ECC platforms. Your expertise will ensure that business requirements are met with robust and scalable SAP solutions. This role demands extensive experience with both SAP ECC and S/4 HANA, strong problem-solving skills, and the ability to lead and manage complex projects.",
+      "benefits": null,
+      "experience_level": "Senior",
+      "remote_option": "onsite",
+      "department": "Consulting and Advisory Services",
+      "location_details": {
+        "basic_location": "Hyderabad, India",
+        "city_state": "Information Technology",
+        "on_site": "Office"
+      },
+      "summary": [
+        "SAP FICO Consultant job in Hyderabad, India | Consulting and Advisory Services jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSAP FICO Consultant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocation\n\n Hyderabad, India\n        \n\n\n\n\n\n\n\nCategory\n\n Consulting and Advisory Services\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n Job Description:\nJob Role : SAP FICO Platinum Consultant\nExperience : 8 - 15 Years\nJob Location : Hyderabad, Banaglore, Chennai, Mumbai, Pune, Delhi NCR\nJob Type: Full-Time\nAbout the Role: As an SAP FICO Consultant L4 to join our dynamic team, The ideal candidate will have a strong background in SAP Financial Accounting (FI) with extensive experience in greenfield S/4HANA implementations",
+        "Your expertise will ensure that business requirements are met with robust and scalable SAP solutions"
+      ],
+      "key_responsibilities": [
+        "you will play a critical role in the implementation, configuration, and support of SAP Financial Accounting (FI) and Controlling (CO) modules on both S/4 HANA and ECC platforms"
+      ],
+      "required_qualifications": [
+        "• Minimum 8+ years of experience in SAP FICO implementation and support"
+      ],
+      "preferred_qualifications": [
+        "• SAP certification in FI/CO is a plus"
+      ],
+      "technical_skills": [],
+      "soft_skills": [
+        "• Strong project management and leadership skills",
+        "• Effective communication and interpersonal skills"
+      ],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "uirements",
+        "team_department": ", The ideal candidate will have a strong background in SAP Financial Accounting (FI) with extensive experience in greenfield S/4HANA implementations"
+      },
+      "match_score": 93.2,
+      "job_url": "https://careers.services.global.ntt/global/en/job/13c3ccb9f7016b0/SAP-FICO-Consultant",
+      "scrape_order": 5
+    },
+    {
+      "title": "SAP FICO Consultant (S/4 HANA)",
+      "company": "NTT DATA",
+      "location": "Bangalore, India",
+      "employment_type": null,
+      "salary_range": null,
+      "requirements": [
+        "CA/ICWA preferred; otherwise a Post Graduate (MBA/MCom, etc.)",
+        "5-8+ years of experience in SAP FI and CO with S/4 HANA experience",
+        "At least 2 Green Field End-to-End Implementations on S/4 HANA, Product costing and COPA in Controlling module",
+        "At least 2+ end-to-end Implementations and Support experience in SAP Finance (S/4 HANA)",
+        "Experience in FI modules: GL, AR, AP, Fixed Assets, Cash Management",
+        "SAP Finance – Month end closing activities, Validations and Substitutions & Reporting",
+        "Experience in FI with Cross Functional Modules SD, MM & other Modules",
+        "In Controlling: Overheads cost controlling, product costing, cost object controlling and actual costing & ML, profitability analysis, COPA Planning, Settlement, Month end closing",
+        "Integration between FICO and MM/SD/PP/PS",
+        "Strong domain experience in Finance",
+        "SAP Certification (preferred)",
+        "Good business process understanding",
+        "Knowledge of SAP Best practices and building blocks",
+        "Knowledge in User exits, BAPI and uploading tools like LSMW, BDC & LTMC",
+        "Developing functional specifications for new developments / change requests",
+        "Day to Day monitoring of tickets and work towards closure",
+        "Analyzing issues and provide estimates",
+        "Development of functional specification documents for changes and enhancements",
+        "Issue Resolution based on SLA",
+        "Coordinate with technical team to resolve the issues in the given objects"
+      ],
+      "responsibilities": [
+        "Day-to-day monitoring of tickets and work towards closure",
+        "Analyze issues and provide estimates",
+        "Develop functional specifications for changes/enhancements",
+        "Resolve issues based on SLA",
+        "Coordinate with the technical team to resolve issues in the given objects",
+        "Interact with customer top management with strong executive presence"
+      ],
+      "description": "Position: SAP FICO Consultant(S/4 HANA). Location: Bangalore. 5-8+ years of experience in SAP FI/CO with S/4 HANA. Requires multiple end-to-end implementations, cross-functional integration with MM/SD/PP/PS, and focus on GL, AR, AP, Fixed Assets, Cash Management, and COPA/Product Costing. Includes ticket monitoring, requirement specs, and SLA-based issue resolution. CA/ICWA preferred; otherwise post-graduate qualifications (MBA/MCom) preferred. SAP Certification preferred.",
+      "benefits": null,
+      "experience_level": "mid-senior",
+      "remote_option": "onsite",
+      "department": "Consulting and Advisory Services",
+      "location_details": {
+        "basic_location": "Bangalore, India",
+        "city_state": "SAP FICO"
+      },
+      "summary": [
+        "SAP FICO Consultant job in Bangalore, India | Consulting and Advisory Services jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSAP FICO Consultant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocation\n\n Bangalore, India\n        \n\n\n\n\n\n\n\nCategory\n\n Consulting and Advisory Services\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Experienced in FI with Cross Functional Module SD, MM & other Modules\nAdditional advantage SAP Controlling -Should have hands on experience in Overheads Cost Controlling, in product costing like product cost planning, cost object controlling and actual costing & ML, Profitability analysis, COPA Planning, Settlement, Month end closing process",
+        "Integration between FICO and other core modules like MM/ SD / PP /PS"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n \nPosition: SAP FICO Consultant(S/4 HANA)\nExperience : 5-8 Years\nSkill: SAP FICO, AP,AR, GL, Fixed Assets, Cash Management, Controlling, Minimum 2 End to End Green Field Implementations\nLocation: Bangalore\nNotice Period: Immediate to 15 days\nJob Description:\nCA/ICWA candidates are preferred but otherwise should be a Post Graduate as minimum educational qualification like MBA/MCom, etc",
+        "Must have at least 2 Green Field End to End Implementation on S/4 HANA, Product costing and COPA in Controlling module"
+      ],
+      "preferred_qualifications": [
+        "Should have 5-8 plus years of experience in SAP FI and CO with S4Hana experience",
+        "Should have at least 2 plus end-to-end Implementations and Support experience in SAP Finance (S4 Hana) \nExperienced in in FI modules- GL, AR, AP, Fixed Assets, Cash Management\nSAP Finance – Month end closing activities, Validations and Substitutions & Reporting",
+        "SAP Certification in preferred"
+      ],
+      "technical_skills": [],
+      "soft_skills": [],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "uests",
+        "team_department": "to resolve the issues in the given objects"
+      },
+      "match_score": 93.2,
+      "job_url": "https://careers.services.global.ntt/global/en/job/19062995e02bcc0/SAP-FICO-Consultant",
+      "scrape_order": 6
+    },
+    {
+      "title": "Senior SAP FI CO Consultant (with Product Costing experience)",
+      "company": "NTT DATA Business Solutions",
+      "location": "Home, United Kingdom",
+      "employment_type": "Contract",
+      "salary_range": null,
+      "requirements": [
+        "Strong background in Finance and Accounting with technical expertise across SAP FI, CO, Product Costing and PS",
+        "At least 6 years' experience delivering across the full life cycle of finance transformation programs, system optimization/enhancements and full SAP implementations",
+        "Professional Accounting qualification desirable",
+        "Proven track record of delivering customer projects; solid and reliable decision-making in complex environments",
+        "Strong interpersonal and soft skills; ability to quickly develop relationships with stakeholders; trusted advisor",
+        "Gravitas and personal integrity; drives results and inspires others",
+        "Fully conversant with SAP Finance solutions, specifically SAP FI, CO, Product Costing and PS",
+        "Good understanding of cross-module integration with MM, SD, PP, HR and QM",
+        "S/4HANA exposure with S4Finance and Activate delivery methodology",
+        "Nice to have: Life sciences regulation knowledge, Batch Management/Batch release, SAP ATTP and SAP IC Hub, legal/government reporting, Serialization, life sciences/pharma industry experience, plasma processes, Computer System Validation, S4HANA Public Cloud or SAP Business ByDesign, Treasury Management, Planning and Consolidation (BPC/BW), Disclosure Management"
+      ],
+      "responsibilities": [
+        "Delivers consulting solutions in the Finance area (SAP FI, CO, Product Costing and PS) against contractual and project requirements",
+        "Advises and defines SAP Finance solutions by helping to solve business and technical challenges",
+        "Provides specialist subject matter expertise in line with the solution",
+        "Takes total ownership of delivering solutions and value to the customer by leading projects and project teams",
+        "Delivers utilisation in line with targets",
+        "Delivers against a resource plan which drives personal and company utilisation",
+        "Identifies further opportunities for revenue",
+        "Acts as a specialist within the consulting group by attaining and sharing best practice, knowledge and skills",
+        "Is a mentor to less experienced team members to support their professional development and personal performance",
+        "Maintains an up to date knowledge and zest for the latest trends and utilizes this understanding to bring innovation to our ways of working",
+        "Travel to client sites as part of project delivery"
+      ],
+      "description": "Senior SAP FI CO Consultant (with Product Costing experience) at NTT DATA Business Solutions. The role involves delivering SAP Finance solutions (FI, CO, Product Costing, PS), leading projects and teams, mentoring others, and contributing to proposition development and bid activity. Requires experience across finance transformation programs and travel to client sites; S/4HANA and Activate delivery experience is preferred.",
+      "benefits": null,
+      "experience_level": "Senior",
+      "remote_option": "On-site with travel to client sites",
+      "department": "Consulting and Advisory Services",
+      "location_details": {
+        "basic_location": "Home, United Kingdom",
+        "city_state": "countries",
+        "country": "United Kingdom"
+      },
+      "summary": [
+        "SAP FI CO Consultant job in Home, United Kingdom | Consulting and Advisory Services jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSAP FI CO Consultant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                This job is available in 2 locations\n            \n\n                    See all\n                \n\n\n\n\n\n\n\n\n\n\nCategory\n\n Consulting and Advisory Services\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n\nSenior SAP FI CO Consultant (with Product Costing experience)\n  \nNTT DATA Business Solutions -\nNTT DATA Business Solutions Group is part of the NTT DATA Corporate Group a top 10 global IT services provider, headquartered in Tokyo, operating in more than 50 countries",
+        "We combine a global reach with local intimacy to provide premier professional SAP services from deep industry expertise consulting to applied innovations in digital, cloud, automation, and system development to business IT outsourcing"
+      ],
+      "key_responsibilities": [],
+      "required_qualifications": [
+        "Habitually demonstrate NTT DATA values and behaviours\n \nEssential Skills\nStrong background in Finance and Accounting with a demonstrable technical expertise and experience across multiple and relevant SAP software products supporting the Finance function",
+        "Technical Must haves:\n \nFully conversant with SAP Finance solutions, specifically SAP FI, CO, Product Costing and PS\nGood understanding of cross module integration with other modules such as (MM, SD, PP, HR and QM)"
+      ],
+      "preferred_qualifications": [
+        "S4HANA exposure with of S4Finance and Activate delivery methodology\n \nTechnical Nice to have:\n \nLife sciences regulation knowledge\nKnowledge in Batch Management / Batch release process\nSAP ATTP and SAP IC Hub knowledge\nKnowledge of legal / government reporting regulations\nSerialization experience\nExperience with systems/landscapes specific to the Life Sciences or Pharmaceutical industry\nKnowledge in Plasma specific processes / fractionation\nExperience in Computer System Validation (legal requirements and practical knowledge)\nExposure to S4HANA Public Cloud or SAP Business By Design solutions\nTreasury Management experience\nGood understanding of Planning and Consolidation using SAP BPC & BW (or equivalent technologies)\nDisclosure Management\n \nGENERAL:\n\nThis is a project consulting role and will require travel to client sites\nCareer opportunities exist along multiple route maps from people and leadership, products and expertise and project management"
+      ],
+      "technical_skills": [],
+      "soft_skills": [
+        "Drives results, effects, convinces and inspires by his/her personality, behaviour and communication style"
+      ],
+      "benefits_compensation": [],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "uirements",
+        "team_department": "s"
+      },
+      "match_score": 91.2,
+      "job_url": "https://careers.services.global.ntt/global/en/job/185a7f490ea52c0/SAP-FI-CO-Consultant",
+      "scrape_order": 7
+    },
+    {
+      "title": "Senior SAP FI Consultant",
+      "company": "NTT DATA",
+      "location": "Bucuresti, Romania",
+      "employment_type": null,
+      "salary_range": null,
+      "requirements": [
+        "Subject Matter Expert for SAP FI Module",
+        "Minimum of 3-7 years experience in SAP FI functional Development and Support",
+        "SAP implementation experience for specific FI module, full project lifecycle",
+        "Solid experience of systems development and project management methodologies",
+        "In deep understanding of the processes in SAP ECC Financial modules: SAP GL, AP, AR, AA, Banks, CO",
+        "In-depth knowledge of SAP FI module functionalities, configuration, and integration with other SAP modules",
+        "Experience with design, implementation and testing processes. Working on these areas to define business processes, solving the gaps, improving the flows, transforming the business requirements into system specifications to meet current and future requirements",
+        "Solid understanding and experience of integrating SAP GL modules with other modules like MM, SD, PM and FICO sub-modules",
+        "Good knowledge of RO specific legislation (SAF-T, e-factura, etc.)",
+        "Experience in designing, implementing and managing processes for interfacing and data transfer between SAP and other applications",
+        "Strong knowledge of Business Processes",
+        "Worked before on IT projects",
+        "Good communication skills",
+        "Great attention to detail, well organized, team player, problem-solving, decision-making, result orientation, resilience, presentation skills, analytical thinking, people-management, goal-orientation",
+        "Ability to work in a complex environment, handling various types of tasks in the financial area and its integration with other systems and/or solutions",
+        "A landscape overview of the retail processes starting from the store to the financial processes would be a plus",
+        "English language knowledge is a must",
+        "Traveling on site in Romania, if required",
+        "Nice to have: IFRS knowledge, Plant maintenance, Investment management, Real estate modules, experience on SAP 4 HANA implementation"
+      ],
+      "responsibilities": [
+        "Design & deliver technical/functional solutions against specifications and blueprints in accordance with agreed standards and procedures",
+        "Design processes and planning, will offer support for the documentation and the implementation of the new functionalities – improvements on the existing for creating new flows, implementing new projects at local or regional level",
+        "Complete unit and integration testing of developments in line with agreed processes ensuring completion within allocated timescales",
+        "Communicate internally with business users and externally with other entities",
+        "Collaborate with all teams within IT department, local business and regional teams to solve the issues and to reduce their impact, to detect all the dependencies for the new requirements and to anticipate all flows involved, to plan correctly the process and to unlock the blockages",
+        "Complete detailed solution documentation for functional solutions",
+        "Provide technical expertise in systems applications within a nominated function",
+        "Provide solutions for different issues on the financial flows, and for the maintenance of the data transfer in SAP through various applications",
+        "Involved in staff training",
+        "Continuously improve our implementation methodology",
+        "Focused on delivering multiple projects at the same time",
+        "Undertake any other reasonable duties and responsibilities as may be required",
+        "Maintain a high level of functionality for the financial processes in the company"
+      ],
+      "description": "Who we are: Join one of the biggest SAP Teams in Romania and work with the latest technologies and tools. We are looking for a skilled and experienced SAP FI consultant to join our team, being involved in local or international projects, collaborating with diverse teams. The role involves designing, delivering, testing and implementing SAP FI solutions, coordinating with IT and business stakeholders, and maintaining financial processes within SAP.",
+      "benefits": [
+        "New beginnings can be a challenge. We promise a smooth integration and a supportive mentor",
+        "Pick your working style: Remote, Hybrid or Office work opportunities",
+        "Early bird or night owl? Our projects have different working hours to suit your needs",
+        "Sponsored certifications, trainings and top e-learning platforms",
+        "Private Health Insurance – customized for you",
+        "Individual coaching sessions or Coaching School",
+        "Epic parties or themed events for employees and families"
+      ],
+      "experience_level": "senior",
+      "remote_option": "Remote, Hybrid or On-site",
+      "department": "Consulting and Advisory Services",
+      "location_details": {
+        "basic_location": "Bucuresti, Romania",
+        "city_state": "local business and regional teams to solve the issues and to reduce their impact",
+        "remote_hybrid": "Remote",
+        "on_site": "Office"
+      },
+      "summary": [
+        "Senior SAP FI Consultant job in Bucuresti, Romania | Consulting and Advisory Services jobs at NTT Data \n\n\n\n\n\n\n\n\n\n\n--\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSenior SAP FI Consultant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                This job is available in 7 locations\n            \n\n                    See all\n                \n\n\n\n\n\n\n\n\n\n\nCategory\n\n Consulting and Advisory Services\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n\n           Add to cart\n             \n\n\n\n        Apply now\n        \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                        Watch\n                    \n\n\n\n                        the video\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Close the popup\n                            \n\n\n\n\n\n                                Loading",
+        "Disable Audio Description\n                                    \n\n\n\n                                        Enable Audio Description\n                                    \n\n\n\n\n\n\n                                        Transcript\n                                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShare via email\n\n\n\n\n\n\nShare via Facebook\n\n\n\n\n\n\nShare via LinkedIn\n\n\n\n\n\n\nShare via twitter\n\n\n\n\n\n\n\n\n\n\n\n\nShare job link\n\n\n\n\n\n\n\nTo your colleagues or friends\n\n\n\nCancel\nCopy Link\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n        Back to search results\n        \n\n  \n\n         Previous job\n         \n \n\n        Next job\n          \n\n\n\n\n\n      JOB DESCRIPTION\n     \n\n\n\n\nWho we are Join one of the biggest SAP Teams in Romania and work with the latest technologies and tools",
+        "Our projects bring together everything our clients need to transform the business to work best for them"
+      ],
+      "key_responsibilities": [
+        "All email communications from an NTT DATA recruiter will be associated with an @nttdata",
+        "All email communications from an NTT DATA recruiter will be associated with an @nttdata"
+      ],
+      "required_qualifications": [
+        "What you'll be doing\n \n\nDesign & deliver technical/functional solutions against specifications and blueprints in accordance with agreed standards and procedures\nDesign processes and planning, will offer support for the documentation and the implementation of the new functionalities – improvements on the existing for creating new flows, implementing new projects at local or regional level\nComplete unit and integration testing of developments in line with agreed processes ensuring completion within allocated timescales\nCommunicate internally with business users and externally with other entities\nCollaborate with all teams within IT department, local business and regional teams to solve the issues and to reduce their impact, to detect all the dependencies for the new requirements and to anticipate all flows involved, to plan correctly the process and to unlock the blockages\nComplete detailed solution documentation for functional solutions\nProvide technical expertise in systems applications within a nominated function\nProvide solutions for different issues on the financial flows, and for the maintenance of the data transfer in SAP through various applications\nInvolved in staff training\nContinuously improve our implementation methodology\nFocused on delivering multiple projects at the same time\nUndertake any other reasonable duties and responsibilities as may be required\nMaintain a high level of functionality for the financial processes in the company\n\n \nWhat you'll bring along\n \n\nSubject Matter Expert for SAP FI Module\nMinimum of 3-7 years experience in SAP FI functional Development and Support\nSAP implementation experience for specific FI module, full project lifecycle\nSolid experience of systems development and project management methodologies\nIn deep understanding of the processes in SAP ECC Financial modules: SAP GL, AP, AR, AA, Banks, CO\nIn-depth knowledge of SAP FI module functionalities, configuration, and integration with other SAP modules\nExperience with design, implementation and testing processes"
+      ],
+      "preferred_qualifications": [
+        ")\nExperience in designing, implementing and managing processes for interfacing and data transfer between SAP and other applications\nStrong knowledge of Business Processes\nWorked before on IT projects\nGood communication skills\nGreat attention, to details, well organized, team player, problem-solving, decision-making, result orientation, resilience, presentation skills, analytical thinking, people-management, goal-orientation\nAbility to work in a complex environment, handling various types of tasks in the financial area and its integration with other systems and/or solutions\nA landscape overview of the retail processes starting from the store to the financial processes would be a plus\nEnglish language knowledge is a must \nTraveling on site in Romania, if required\n\nNice to have:\n\nIFRS knowledge, Plant maintenance, Investment management, Real estate modules, experience on SAP 4 HANA implementation\n\n\n\n\n\n\n\nDocument\n\n\nWhat’s in it for you\n\n✔ New beginnings can be a challenge"
+      ],
+      "technical_skills": [],
+      "soft_skills": [
+        ") or personal communication channels (WhatsApp, Facebook etc) at any time during the recruitment process",
+        ") or personal communication channels (WhatsApp, Facebook etc) at any time during the recruitment process"
+      ],
+      "benefits_compensation": [
+        "Sharpen your tech skills with our sponsored certifications, trainings and top e-learning platforms \n✔ We want you to stay healthy",
+        "Enjoy our Private Health Insurance ⁠– it’s custom-made for you \n✔ A clear mind is a healthy mind",
+        "Sharpen your tech skills with our sponsored certifications, trainings and top e-learning platforms\nWe want you to stay healthy",
+        "Enjoy our Private Health Insurance ⁠– it’s custom-made for you\nA clear mind is a healthy mind"
+      ],
+      "company_culture": [],
+      "metadata": {
+        "job_id": "uirements",
+        "team_department": "s in Romania and work with the latest technologies and tools"
+      },
+      "match_score": 83.2,
+      "job_url": "https://careers.services.global.ntt/global/en/job/e9a1a807417c500/Senior-SAP-FI-Consultant",
+      "scrape_order": 8
+    }
+  ],
+  "timestamp": 16924.6639095
 }
